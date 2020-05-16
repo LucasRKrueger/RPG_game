@@ -2,15 +2,8 @@
 
 using namespace std;
 
-Game::Game()
-{
-	choice = 0;
-	playing = true;
-}
-Game::~Game()
-{
-
-}
+Game::Game(){choice = 0;playing = true;}
+Game::~Game(){}
 
 //Functions
 void Game::mainMenu()
