@@ -6,7 +6,10 @@ class Character
 		Character();
 		virtual ~Character();
 
-		void initialize(int level, std::string name);
+		void initialize(const std::string name);
+		std::string getAsString() const;
+		int necessaryXP(int level);
+		void levelUp();
 
 		inline const double& getX() const {return this->xPosition;}
 		inline const double& getY() const {return this->yPosition;}
@@ -31,10 +34,21 @@ class Character
 		int level;
 		int exp;
 		int expNext;
+
+
+		int strength;
+		int vitality;
+		int dexterity;
+		int intelligence;
+
+
 		int hp;
 		int hpMax;
 		int stamina;
 		int damageMin;
 		int damageMax;
 		int defence;
+
+		int statPoints;
+		int skillPoints;
 };
