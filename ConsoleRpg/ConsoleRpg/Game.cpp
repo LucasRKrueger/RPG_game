@@ -1,5 +1,7 @@
 #include "Game.h"
 
+using namespace std;
+
 Game::Game()
 {
 	choice = 0;
