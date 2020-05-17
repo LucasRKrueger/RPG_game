@@ -9,5 +9,9 @@ class Item
 		Item();
 		virtual ~Item();
 	private:
-		 
+		std::string name;
+		int buyValue;
+		int sellValue;
+
+
 };
