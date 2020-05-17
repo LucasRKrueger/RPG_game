@@ -86,7 +86,7 @@ void Character::printStatus() const
 
 int Character::necessaryXP(int level)
 {
-	return static_cast<int>(50 / 3) * (pow(level, 3) - 6 * pow(level, 2) + 17 * level -12);
+	return static_cast<int>(50 / 3) * (pow(level, 3) - 6 * pow(level, 2) + 17 * level -12) + 100;
 }
 
 void Character::levelUp()
