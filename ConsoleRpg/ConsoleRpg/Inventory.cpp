@@ -36,6 +36,7 @@ void Inventory::initialize(const int from)
 		this->itemArr[i] = nullptr;
 	}
 }
+
 void Inventory::expand()
 {
 	this->capacity *= 2;
