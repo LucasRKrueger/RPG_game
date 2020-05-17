@@ -11,10 +11,12 @@ class Game
 		Game();
 		virtual ~Game();	
 		void mainMenu();	
+		void initGame();
 		inline bool getPlaying() const {return this->playing;}
 
 	private:
 		int choice;
 		bool playing;
-};
 
+		Character character;
+};

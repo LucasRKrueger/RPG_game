@@ -1,11 +1,14 @@
 #pragma once
 #include <string>
+#include <iostream>
+#include "Game.h"
+
 class Character
 {
 	public:
 		Character();
 		virtual ~Character();
-
+		
 		void initialize(const std::string name);
 		std::string getAsString() const;
 		int necessaryXP(int level);
@@ -23,8 +26,6 @@ class Character
 		inline const int& getDamageMin() const {return this->damageMin;}
 		inline const int& getDamageMax() const {return this->damageMax;}
 		inline const int& getDefence() const {return this->defence;}
-
-
  
 	private:
 		double xPosition;
@@ -45,6 +46,7 @@ class Character
 		int hp;
 		int hpMax;
 		int stamina;
+		int staminaMax;
 		int damageMin;
 		int damageMax;
 		int defence;
