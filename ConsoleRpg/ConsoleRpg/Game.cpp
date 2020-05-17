@@ -13,7 +13,7 @@ void Game::initGame()
 {
 	string name;
 	cout << "Enter name for character: ";
-	getline(cin, name);
+	getline(std::cin, name);
 
 	character.initialize(name);
 }
@@ -40,7 +40,7 @@ void Game::mainMenu()
 			playing = false;
 			break;
 		case 5:
-
+			character.printStatus();
 			break;
 	}
 }

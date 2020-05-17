@@ -1,7 +1,7 @@
 #pragma once
-#include <string>
 #include <iostream>
-#include "Game.h"
+#include <iomanip>
+#include <string>
 
 class Character
 {
@@ -10,7 +10,7 @@ class Character
 		virtual ~Character();
 		
 		void initialize(const std::string name);
-		std::string getAsString() const;
+		void printStatus() const;
 		int necessaryXP(int level);
 		void levelUp();
 
@@ -23,6 +23,7 @@ class Character
 		inline const int& getHp() const {return this->hp;}
 		inline const int& getHpMax() const {return this->hpMax;}
 		inline const int& getStamina() const {return this->stamina;}
+		inline const int& getStaminaMax() const {return this->staminaMax;}
 		inline const int& getDamageMin() const {return this->damageMin;}
 		inline const int& getDamageMax() const {return this->damageMax;}
 		inline const int& getDefence() const {return this->defence;}
@@ -50,6 +51,7 @@ class Character
 		int damageMin;
 		int damageMax;
 		int defence;
+		int luck;
 
 		int statPoints;
 		int skillPoints;
