@@ -33,6 +33,10 @@ class Character
 		double xPosition;
 		double yPosition;
 
+		Inventory inventory;
+		Weapon weapon;
+		Armor armor;
+
 		std::string name;
 		int level;
 		int exp;

@@ -2,7 +2,6 @@
 
 #include "Weapon.h"
 #include "Armor.h"
-
 class Inventory
 {
 	public:
