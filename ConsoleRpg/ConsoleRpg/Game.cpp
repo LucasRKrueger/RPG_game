@@ -45,11 +45,18 @@ void Game::mainMenu()
 			characters[activeCharacter].printStatus();
 			break;
 		case 6:
+			cin.ignore();
 			createNewCharacter();
+			saveCharacters();
+			break;
+		case 7:
 			saveCharacters();
 			break;
 		case 8:
 			loadCharacter();
+			break;
+
+		default:
 			break;
 	}
 }
@@ -58,15 +65,22 @@ void Game::createNewCharacter()
 	string name;
 	cout << "Character Name: ";
 	getline(std::cin, name);
-	cin.ignore();
-
+	characters.push_back(Character());
 	activeCharacter = character.getActiveCharacter(characters);
 	characters[activeCharacter].initialize(name);
 }
 
 void Game::saveCharacters()
 {
-
+	ofstream outFile(fileName);
+	if (outFile.is_open())
+	{
+		for (size_t i = 0; i < characters.size(); i++)
+		{
+			outFile << characters[i].getAsString() << "\n";
+		}
+	}
+	outFile.close();
 }
 
 void Game::loadCharacter()

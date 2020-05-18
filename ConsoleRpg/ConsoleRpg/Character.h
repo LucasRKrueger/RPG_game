@@ -1,5 +1,6 @@
 #pragma once
 #include "Inventory.h"
+#include <vector>
 
 class Character
 {
