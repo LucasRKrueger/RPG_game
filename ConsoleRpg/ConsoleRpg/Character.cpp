@@ -48,13 +48,13 @@ void Character::initialize(std::string name)
 	this->dexterity = 0;
 	this->intelligence = 0;
 
-	this->hp = 10;
-	this->hpMax = 10;
-	this->stamina = 10;
-	this->staminaMax = 10;
-	this->damageMin = 2;
-	this->damageMax = 4;
-	this->defence = 1;
+	this->hpMax = (this->vitality * 2) + (this->strength/2);
+	this->hp = hpMax;
+	this->staminaMax = this->vitality + (this->strength/2) + (this->dexterity/3);
+	this->stamina = this->staminaMax;
+	this->damageMin = this->strength;
+	this->damageMax = this->strength + 2;
+	this->defence = this->dexterity + (this->intelligence/2);
 	this->luck = 1;
 
 
