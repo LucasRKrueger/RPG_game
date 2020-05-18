@@ -14,6 +14,8 @@ Game::~Game(){}
 void Game::initGame()
 {
 	createNewCharacter();
+	Weapon weapon1(2, 4, "Stick", 1, 5, 2, 1);
+	std::cout << weapon1.toString() << std::endl;
 }
 
 //Functions

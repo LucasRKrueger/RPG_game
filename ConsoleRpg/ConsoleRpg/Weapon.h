@@ -1,7 +1,7 @@
 #pragma once
 #include "Item.h"
 
-class Weapon 
+class Weapon : public Item
 {
 	private:
 		int damageMin;
