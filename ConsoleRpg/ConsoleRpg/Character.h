@@ -1,7 +1,6 @@
 #pragma once
 #include "Inventory.h"
 
-
 class Character
 {
 	public:
@@ -12,6 +11,7 @@ class Character
 		void printStatus() const;
 		int necessaryXP(int level);
 		void levelUp();
+		std::string getAsString()const;//all of stuffs as string XD
 
 		inline const double& getX() const {return this->xPosition;}
 		inline const double& getY() const {return this->yPosition;}
@@ -22,10 +22,11 @@ class Character
 		inline const int& getHp() const {return this->hp;}
 		inline const int& getHpMax() const {return this->hpMax;}
 		inline const int& getStamina() const {return this->stamina;}
-		inline const int& getStaminaMax() const {return this->staminaMax;}
 		inline const int& getDamageMin() const {return this->damageMin;}
 		inline const int& getDamageMax() const {return this->damageMax;}
 		inline const int& getDefence() const {return this->defence;}
+		inline const int& getActiveCharacter(std::vector<Character> characters) const {return characters.size() - 1;}
+
  
 	private:
 		double xPosition;
