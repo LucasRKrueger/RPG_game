@@ -9,11 +9,7 @@ int main()
 
 	Inventory inventory;
 	//MOCK TEST
-	inventory.addItem(Item());
-	inventory.addItem(Item());
-	inventory.addItem(Item());
-	inventory.addItem(Item());
-	inventory.addItem(Item());
+
 	inventory.debugPrint();
 
 

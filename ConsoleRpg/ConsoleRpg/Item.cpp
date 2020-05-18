@@ -1,6 +1,6 @@
 #include "Item.h"
 
-Item::Item(int damageMin, int damgeMax, std::string name,
+Item::Item(std::string name,
 	int level, int buyvalue, int sellValue, int rarity)
 {
 	this->name = "NONE";
