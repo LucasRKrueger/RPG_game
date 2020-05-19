@@ -26,6 +26,7 @@ class Character
 		inline const int& getDamageMin() const {return this->damageMin;}
 		inline const int& getDamageMax() const {return this->damageMax;}
 		inline const int& getDefence() const {return this->defence;}
+		inline const int& getAccuracy() const {return this->accuracy;}
 		inline const int& getActiveCharacter(std::vector<Character> characters) const {return characters.size() - 1;}
 
  
@@ -60,6 +61,7 @@ class Character
 		int damageMin;
 		int damageMax;
 		int defence;
+		int accuracy;
 		int luck;
 
 		int statPoints;
