@@ -35,7 +35,11 @@ class Character
 
 		Inventory inventory;
 		Weapon weapon;
-		Armor armor;
+
+		Armor armor_head;
+		Armor armor_chest;
+		Armor armor_arms;
+		Armor armor_legs;
 
 		std::string name;
 		int level;

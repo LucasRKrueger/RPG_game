@@ -1,2 +1,17 @@
 
 ConsoleRpg/UpgradeLog.htm
+*.pdb
+*.ilk
+*.ilk
+ConsoleRpg/ConsoleRpg/Debug/vc142.pdb
+ConsoleRpg/ConsoleRpg/Debug/vc142.idb
+ConsoleRpg/.vs/ConsoleRpg/v16/Browse.VC.db
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.Build.CppClean.log
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.log
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/CL.command.1.tlog
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/CL.read.1.tlog
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/CL.write.1.tlog
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/ConsoleRpg.lastbuildstate
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/link.command.1.tlog
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/link.read.1.tlog
+ConsoleRpg/ConsoleRpg/Debug/ConsoleRpg.tlog/link.write.1.tlog
