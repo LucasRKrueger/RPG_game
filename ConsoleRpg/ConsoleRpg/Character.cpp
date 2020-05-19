@@ -64,23 +64,25 @@ void Character::initialize(std::string name)
 
 void Character::printStatus() const
 {
-	std::cout << "= Character Sheet =" << std::endl;
-	std::cout << "= Name: " << this->name << std::endl;
-	std::cout << "= Level: " << this->level <<std::endl;
-	std::cout << "= Exp: " << this->exp << std::endl;
-	std::cout << "= Exp to Next Level: " << this->expNext <<std::endl;
-	std::cout << std::endl;
-	std::cout << "= Strenght: " << this->strength << std::endl;
-	std::cout << "= Vitality: " << this->vitality << std::endl;
-	std::cout << "= Dexterity: " << this->dexterity << std::endl;
-	std::cout << "= Intelligence: " << this->intelligence << std::endl;
-	std::cout <<  std::endl;
-	std::cout << "= HP: " << this->hp<< " / " <<this-> hpMax << std::endl;
-	std::cout << "= Stamina: " << this->stamina<< " / " << this->staminaMax << std::endl;
-	std::cout << "= Dagame: " << this->damageMin<<  " / " << this->damageMax <<std::endl;
-	std::cout << "= Defence: " << this->defence << std::endl;
-	std::cout << "= Luck: " << this->luck << std::endl;
+	std::cout << "| ## Character Sheet ##" << std::endl;
+	std::cout << "|================================" << std::endl;
+	std::cout << "| Name: " << this->name << std::endl;
+	std::cout << "| Level: " << this->level <<std::endl;
+	std::cout << "| Exp: " << this->exp << std::endl;
+	std::cout << "| Exp to Next Level: " << this->expNext <<std::endl;
+	std::cout << "|================================" <<std::endl;
+	std::cout << "| Strenght: " << this->strength << std::endl;
+	std::cout << "| Vitality: " << this->vitality << std::endl;
+	std::cout << "| Dexterity: " << this->dexterity << std::endl;
+	std::cout << "| Intelligence: " << this->intelligence << std::endl;
+	std::cout << "================================"<<std::endl;
+	std::cout << "| HP: " << this->hp<< " / " <<this-> hpMax << std::endl;
+	std::cout << "| Stamina: " << this->stamina<< " / " << this->staminaMax << std::endl;
+	std::cout << "| Damage: " << this->damageMin<<  " / " << this->damageMax <<std::endl;
+	std::cout << "| Defence: " << this->defence << std::endl;
+	std::cout << "| Luck: " << this->luck << std::endl;
 
+	std::cout << "================================"<< std::endl;
 	std::cout << std::endl;
 }
 
