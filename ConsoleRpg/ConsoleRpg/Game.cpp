@@ -13,18 +13,8 @@ Game::~Game(){}
 
 void Game::initGame()
 {
-	Inventory inventory;
-	//inventory.addItem(Weapon(2, 4, "stick\n", 1, 3, 1, 1));
-	//inventory.addItem(Weapon(2, 4, "stick2\n", 1, 3, 1, 1));
-	//inventory.addItem(Weapon(4, 6, "wooden sword\n", 1, 3, 1, 1));
-	//inventory.addItem(Armor(1, 2, "Helmet\n", 1, 3, 1, 1));
-	//inventory.addItem(Armor(2, 2, "Grevas\n", 1, 3, 1, 1));
-
-	for (size_t i = 0; i < inventory.size(); i++)
-	{
-		cout << inventory[i].debugPrint() << endl;
-	}
-
+	Enemy enemy(rand() & 10 + 1);
+	cout << enemy.getAsString() << endl;
 	createNewCharacter();
 }
 
@@ -104,6 +94,11 @@ void Game::saveCharacters()
 }
 
 void Game::loadCharacter()
+{
+
+}
+
+void Game::Travel()
 {
 
 }

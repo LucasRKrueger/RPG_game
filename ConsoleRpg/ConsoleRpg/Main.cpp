@@ -7,12 +7,6 @@ int main()
 	Game game;
 	game.initGame();
 
-	Inventory inventory;
-	//MOCK TEST
-
-	inventory.debugPrint();
-
-
 	while (game.getPlaying())
 	{
 		game.mainMenu();
