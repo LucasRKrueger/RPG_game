@@ -34,6 +34,8 @@ class Character
 		double xPosition;
 		double yPosition;
 
+		int distanceTravelled;
+
 		Inventory inventory;
 		Weapon weapon;
 
@@ -41,7 +43,8 @@ class Character
 		Armor armor_chest;
 		Armor armor_arms;
 		Armor armor_legs;
-
+		int gold;
+		
 		std::string name;
 		int level;
 		int exp;
