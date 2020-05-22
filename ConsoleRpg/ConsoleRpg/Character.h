@@ -16,6 +16,7 @@ class Character
 
 		inline const double& getX() const {return this->xPosition;}
 		inline const double& getY() const {return this->yPosition;}
+		inline const int& getDistanceTravelled() const {return this->distanceTravelled;}
 		inline const std::string& getName() const {return this->name;}
 		inline const int& getLevel() const {return this->level;}
 		inline const int& getExp() const {return this->exp;}
@@ -29,7 +30,10 @@ class Character
 		inline const int& getAccuracy() const {return this->accuracy;}
 		inline const int& getActiveCharacter(std::vector<Character> characters) const {return characters.size() - 1;}
 
- 
+		inline const int& setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}
+		inline const int& travel() {this->distanceTravelled++;}
+
+
 	private:
 		double xPosition;
 		double yPosition;

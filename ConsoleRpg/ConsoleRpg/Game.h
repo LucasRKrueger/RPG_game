@@ -1,11 +1,11 @@
 #pragma once
-#include "Character.h"
+
 #include "Functions.h"
+#include "Event.h"
 #include <iostream>
 #include <iomanip>
 #include <ctime>
 #include <vector>
-#include <fstream>
 #include "Enemy.h"
 
 class Game

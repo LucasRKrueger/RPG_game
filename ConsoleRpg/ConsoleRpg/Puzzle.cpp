@@ -1,6 +1,6 @@
 #include "Puzzle.h"
 
-Puzzle::Puzzle()
+Puzzle::Puzzle(std::string fileName)
 {
 
 }
