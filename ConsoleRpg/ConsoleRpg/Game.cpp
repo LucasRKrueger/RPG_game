@@ -104,5 +104,5 @@ void Game::Travel()
 
 	Event event;
 
-	event.generateEvent();
+	event.generateEvent(this->characters[activeCharacter]);
 }

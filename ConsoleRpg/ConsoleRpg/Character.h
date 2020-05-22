@@ -30,8 +30,8 @@ class Character
 		inline const int& getAccuracy() const {return this->accuracy;}
 		inline const int& getActiveCharacter(std::vector<Character> characters) const {return characters.size() - 1;}
 
-		inline const int& setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}
-		inline const int& travel() {this->distanceTravelled++;}
+		inline void setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}
+		inline void travel() {this->distanceTravelled++;}
 
 
 	private:

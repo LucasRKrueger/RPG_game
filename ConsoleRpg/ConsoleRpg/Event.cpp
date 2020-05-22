@@ -29,12 +29,12 @@ void Event::generateEvent(Character &character)
 	}
 }
 
-void enemyEncouter(Character& character)
+void Event::enemyEncouter(Character& character)
 {
 
 }
 
-void puzzleEncouter(Character& character)
+void Event::puzzleEncouter(Character& character)
 {
 
 }
