@@ -13,8 +13,6 @@ Game::~Game(){}
 
 void Game::initGame()
 {
-	Enemy enemy(rand() & 10 + 1);
-	cout << enemy.getAsString() << endl;
 	createNewCharacter();
 }
 
@@ -24,7 +22,7 @@ void Game::mainMenu()
 	int activeCharacter = character.getActiveCharacter(characters);
 	cout << "CHARACTER NAME: " << characters[activeCharacter].getName() << endl << endl;
 
-	cout << "| = MAIN MENU =            |" << endl;
+	cout << "|       = MAIN MENU =      |" << endl;
 	cout << "|==========================|" << endl;
 	cout << "| 0: Quit                  |" << endl;
 	cout << "| 1: Travel                |" << endl;
@@ -49,6 +47,9 @@ void Game::mainMenu()
 	{
 		case 0:
 			playing = false;
+			break;
+		case 1:
+			Travel();
 			break;
 		case 5:
 			characters[activeCharacter].printStatus();

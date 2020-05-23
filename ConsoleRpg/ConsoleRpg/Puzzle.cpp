@@ -38,12 +38,15 @@ std::string Puzzle::getAsString()
 {
 	std::string answers = "";
 
-	for (size_t i = 0; i < answers.size(); i++)
+	for (size_t i = 0; i < this->answers.size(); i++)
 	{
-		answers = std::to_string(i) + ": " + this->answers[i] + "\n";
+		answers += std::to_string(i) + ": " + this->answers[i] + "\n";
 	}
 
-	return this->question + "\n \n" +
+	/*return this->question + "\n \n" +
 		   answers + "\n" +
-		   std::to_string(this->correctAnswer) + "\n";		   		   
+		   std::to_string(this->correctAnswer) + "\n";		*/
+
+	return this->question + "\n \n" +
+		answers + "\n";
 }

@@ -31,10 +31,41 @@ void Event::generateEvent(Character &character)
 
 void Event::enemyEncouter(Character& character)
 {
+	while (true)
+	{
 
+	}
 }
 
 void Event::puzzleEncouter(Character& character)
 {
+	bool completed = false;
+	int userAnswer = 0;
+	int chances = 1;
+	Puzzle puzzle("Puzzles/1.txt");
 
+	while (!completed && chances > 0)
+	{
+		chances--;
+		std::cout << puzzle.getAsString() + "\n";
+
+		std::cout << "Your Answer: ";
+		std::cin >> userAnswer;
+		std::cout << "\n";
+
+		if (puzzle.getCorrectAnswer() == userAnswer)
+		{
+			completed = true;
+			//Give exp etc.. and continue
+		}
+	}
+
+	if (completed) 
+	{
+		std::cout << "CONGRATS YOU SUCCEDED! \n \n";
+	}
+	else
+	{
+		std::cout << "YOU FAILED! \n \n";
+	}
 }
