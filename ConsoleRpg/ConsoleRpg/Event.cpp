@@ -52,20 +52,19 @@ void Event::puzzleEncouter(Character& character)
 		std::cout << "Your Answer: ";
 		std::cin >> userAnswer;
 		std::cout << "\n";
-
-		if (puzzle.getCorrectAnswer() == userAnswer)
-		{
-			completed = true;
-			//Give exp etc.. and continue
-		}
+		
+		completed = puzzle.getCorrectAnswer() == userAnswer;
 	}
 
 	if (completed) 
 	{
+		//receive random item
+		character.receiveExperience();
 		std::cout << "CONGRATS YOU SUCCEDED! \n \n";
 	}
 	else
 	{
+		character.stealExperience();
 		std::cout << "YOU FAILED! \n \n";
 	}
 }

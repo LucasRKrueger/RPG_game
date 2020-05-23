@@ -33,6 +33,8 @@ class Character
 		inline void setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}
 		inline void travel() {this->distanceTravelled++;}
 
+		inline void stealExperience() {this->exp -= this->level * 50;}
+		inline void receiveExperience() {this->exp += this->level * 10;}
 
 	private:
 		double xPosition;
