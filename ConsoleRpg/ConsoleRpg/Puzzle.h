@@ -3,17 +3,17 @@
 #include<string>
 #include<vector>
 #include<fstream>
-
+using namespace std;
 class Puzzle {
 	public:
-		Puzzle(std::string fileName);
+		Puzzle(string fileName);
 		virtual ~Puzzle();
-		std::string getAsString();
+		string getAsString();
 		inline const int& getCorrectAnswer() {return this->correctAnswer;}
 
 	private:
-		std::string question;
-		std::vector<std::string>answers;
+		string question;
+		vector<string>answers;
 		int correctAnswer;
 
 };

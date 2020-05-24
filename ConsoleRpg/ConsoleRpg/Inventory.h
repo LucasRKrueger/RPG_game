@@ -17,7 +17,7 @@ class Inventory
 		{
 			for (size_t i = 0; i < this->numberOfItems; i++)
 			{
-				std::cout << this->itemArr[i]->debugPrint() << std::endl;
+				cout << this->itemArr[i]->debugPrint() << endl;
 			}
 		}
 

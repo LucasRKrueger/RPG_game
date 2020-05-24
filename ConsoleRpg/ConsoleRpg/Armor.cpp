@@ -1,6 +1,6 @@
 #include "Armor.h"
 
-Armor::Armor(int type, int defence, std::string name,
+Armor::Armor(int type, int defence, string name,
 	int level, int buyvalue, int sellValue, int rarity) : Item(name, level, buyvalue, sellValue, rarity)
 {
 	this->type = type;
@@ -12,9 +12,9 @@ Armor::~Armor()
 
 }
 
-std::string Armor::toString()
+string Armor::toString()
 {
-	return std::to_string(this->type) + std::to_string(this->defence);
+	return to_string(this->type) + to_string(this->defence);
 }
 
 Armor* Armor::clone() const

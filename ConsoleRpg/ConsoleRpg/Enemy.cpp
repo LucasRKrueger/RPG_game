@@ -17,14 +17,14 @@ Enemy::~Enemy()
 
 }
 
-std::string Enemy::getAsString() const
+string Enemy::getAsString() const
 {
-	return  "Level: " + std::to_string(this->level) + "\n" +
-		    "Hp: " + std::to_string(this->hp) + " / " + std::to_string(this->hpMax) + "\n" +
-		    "Damage: " + std::to_string(this->damageMin) + " - " + std::to_string(this->damageMax) 
+	return  "Level: " + to_string(this->level) + "\n" +
+		    "Hp: " + to_string(this->hp) + " / " + to_string(this->hpMax) + "\n" +
+		    "Damage: " + to_string(this->damageMin) + " - " + to_string(this->damageMax) 
 		    + "\n"  +
-		    "Defence: " + std::to_string(this->defence) + "\n"
-		    "Accuracy: " + std::to_string(this->accuracy) + "\n"
-		    "Drop Chance: " + std::to_string(this->dropChance) + "\n";
+		    "Defence: " + to_string(this->defence) + "\n"
+		    "Accuracy: " + to_string(this->accuracy) + "\n"
+		    "Drop Chance: " + to_string(this->dropChance) + "\n";
 
 }

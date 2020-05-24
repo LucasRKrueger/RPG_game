@@ -1,23 +1,23 @@
 #include "Puzzle.h"
 
-Puzzle::Puzzle(std::string fileName)
+Puzzle::Puzzle(string fileName)
 {	
 	this->correctAnswer = 0;	
 
-	std::ifstream inFile(fileName);
+	ifstream inFile(fileName);
 
 	int _numberOfAnswers = 0;
-	std::string _answer = "";
+	string _answer = "";
 	int _correctAnswer = 0;
 	if (inFile.is_open())
 	{
-		std::getline(inFile, this->question);
+		getline(inFile, this->question);
 		inFile >> _numberOfAnswers;
 		inFile.ignore();
 
 		for (size_t i = 0; i < _numberOfAnswers; i++)
 		{
-			std::getline(inFile, _answer);
+			getline(inFile, _answer);
 			this->answers.push_back(_answer);
 		}
 		inFile >> _correctAnswer;
@@ -34,13 +34,13 @@ Puzzle::~Puzzle()
 
 }
 
-std::string Puzzle::getAsString()
+string Puzzle::getAsString()
 {
-	std::string answers = "";
+	string answers = "";
 
 	for (size_t i = 0; i < this->answers.size(); i++)
 	{
-		answers += std::to_string(i) + ": " + this->answers[i] + "\n";
+		answers += to_string(i) + ": " + this->answers[i] + "\n";
 	}
 	return this->question + "\n \n" + answers + "\n";
 }

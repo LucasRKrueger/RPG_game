@@ -24,7 +24,7 @@ void Game::mainMenu()
 
 	if (this->characters[activeCharacter].getExp() >= this->characters[activeCharacter].getExpNext()) 
 	{
-		std::cout << "LEVEL UP IS AVALIABLE! \n\n";
+		cout << "LEVEL UP IS AVALIABLE! \n\n";
 	}
 
 	cout << "|       = MAIN MENU =      |" << endl;
@@ -40,11 +40,11 @@ void Game::mainMenu()
 	cout << "| 8: Load Character        |" << endl;
 	cout << "|==========================|" << endl;
 
-	cout << std::endl;
+	cout << endl;
 
 	cout << endl << "Choice: ";
 	cin >> choice;
-	std::cout << std::endl;
+	cout << endl;
 
 	system("CLS");
 
@@ -85,7 +85,7 @@ void Game::createNewCharacter()
 {
 	string name;
 	cout << "Character Name: ";
-	getline(std::cin, name);
+	getline(cin, name);
 	characters.push_back(Character());
 	activeCharacter = character.getActiveCharacter(characters);
 	characters[activeCharacter].initialize(name);

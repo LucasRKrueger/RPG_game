@@ -8,16 +8,14 @@ class Character
 		Character();
 		virtual ~Character();
 		
-		void initialize(const std::string name);
+		void initialize(const string name);
 		void printStatus() const;
 		int necessaryXP(int level);
 		void levelUp();
-		std::string getAsString()const;//all of stuffs as string XD
+		string getAsString()const;//all of stuffs as string XD
 
-		inline const double& getX() const {return this->xPosition;}
-		inline const double& getY() const {return this->yPosition;}
 		inline const int& getDistanceTravelled() const {return this->distanceTravelled;}
-		inline const std::string& getName() const {return this->name;}
+		inline const string& getName() const {return this->name;}
 		inline const int& getLevel() const {return this->level;}
 		inline const int& getExp() const {return this->exp;}
 		inline const int& getExpNext() const {return this->expNext;}
@@ -28,7 +26,7 @@ class Character
 		inline const int& getDamageMax() const {return this->damageMax;}
 		inline const int& getDefence() const {return this->defence;}
 		inline const int& getAccuracy() const {return this->accuracy;}
-		inline const int& getActiveCharacter(std::vector<Character> characters) const {return characters.size() - 1;}
+		inline const int& getActiveCharacter(vector<Character> characters) const {return characters.size() - 1;}
 
 		inline void setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}
 		inline void travel() {this->distanceTravelled++;}
@@ -37,9 +35,6 @@ class Character
 		inline void receiveExperience() {this->exp += this->level * 10;}
 
 	private:
-		double xPosition;
-		double yPosition;
-
 		int distanceTravelled;
 
 		Inventory inventory;
@@ -51,7 +46,7 @@ class Character
 		Armor armor_legs;
 		int gold;
 		
-		std::string name;
+		string name;
 		int level;
 		int exp;
 		int expNext;

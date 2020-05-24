@@ -2,8 +2,6 @@
 
 Character::Character()
 {
-	this->xPosition = 0.0;
-	this->yPosition = 0.0;
 	this->distanceTravelled = 0;
 
 	this->gold = 0;
@@ -37,10 +35,8 @@ Character::~Character()
 
 }
 
-void Character::initialize(std::string name)
+void Character::initialize(string name)
 {
-	this->xPosition = 0.0;
-	this->yPosition = 0.0;
 	this->distanceTravelled = 0;
 
 	this->gold = 100;
@@ -72,27 +68,27 @@ void Character::initialize(std::string name)
 
 void Character::printStatus() const
 {
-	std::cout << "| ## Character Sheet ##" << std::endl;
-	std::cout << "|================================" << std::endl;
-	std::cout << "| Name: " << this->name << std::endl;
-	std::cout << "| Level: " << this->level <<std::endl;
-	std::cout << "| Exp: " << this->exp << std::endl;
-	std::cout << "| Exp to Next Level: " << this->expNext <<std::endl;
-	std::cout << "|================================" <<std::endl;
-	std::cout << "| Strenght: " << this->strength << std::endl;
-	std::cout << "| Vitality: " << this->vitality << std::endl;
-	std::cout << "| Dexterity: " << this->dexterity << std::endl;
-	std::cout << "| Intelligence: " << this->intelligence << std::endl;
-	std::cout << "================================"<<std::endl;
-	std::cout << "| HP: " << this->hp<< " / " <<this-> hpMax << std::endl;
-	std::cout << "| Stamina: " << this->stamina<< " / " << this->staminaMax << std::endl;
-	std::cout << "| Damage: " << this->damageMin<<  " / " << this->damageMax <<std::endl;
-	std::cout << "| Defence: " << this->defence << std::endl;
-	std::cout << "| Accuracy: " << this->accuracy << std::endl;
-	std::cout << "| Luck: " << this->luck << std::endl;
+	cout << "| ## Character Sheet ##" << endl;
+	cout << "|================================" << endl;
+	cout << "| Name: " << this->name << endl;
+	cout << "| Level: " << this->level << endl;
+	cout << "| Exp: " << this->exp << endl;
+	cout << "| Exp to Next Level: " << this->expNext << endl;
+	cout << "|================================" << endl;
+	cout << "| Strenght: " << this->strength << endl;
+	cout << "| Vitality: " << this->vitality << endl;
+	cout << "| Dexterity: " << this->dexterity << endl;
+	cout << "| Intelligence: " << this->intelligence << endl;
+	cout << "================================"<< endl;
+	cout << "| HP: " << this->hp<< " / " <<this-> hpMax << endl;
+	cout << "| Stamina: " << this->stamina<< " / " << this->staminaMax << endl;
+	cout << "| Damage: " << this->damageMin<<  " / " << this->damageMax << endl;
+	cout << "| Defence: " << this->defence << endl;
+	cout << "| Accuracy: " << this->accuracy << endl;
+	cout << "| Luck: " << this->luck << endl;
 
-	std::cout << "================================"<< std::endl;
-	std::cout << std::endl;
+	cout << "================================"<< endl;
+	cout << endl;
 }
 
 int Character::necessaryXP(int level)
@@ -111,28 +107,27 @@ void Character::levelUp()
 
 		this->statPoints++;
 		this->skillPoints++;
-		std::cout << "YOU ARE NOW LEVEL " << this->level << "!" << "\n\n";
+		cout << "YOU ARE NOW LEVEL " << this->level << "!" << "\n\n";
 	}
 	else
 	{
-		std::cout << "NOT ENOUGH EXP!" << "\n\n";
+		cout << "NOT ENOUGH EXP!" << "\n\n";
 	}
 }
 
 
-std::string Character::getAsString() const
-{
-	return std::to_string(xPosition) + " "
-		+ std::to_string(yPosition) + " "
-		+ name + " "
-		+ std::to_string(level) + " "
-		+ std::to_string(exp) + " "
-		+ std::to_string(strength) + " "
-		+ std::to_string(vitality) + " "
-		+ std::to_string(dexterity) + " "
-		+ std::to_string(intelligence) + " "
-		+ std::to_string(hp) + " "
-		+ std::to_string(stamina) + " "
-		+ std::to_string(statPoints) + " "
-		+ std::to_string(skillPoints);
+string Character::getAsString() const
+{		
+	return name + " "
+		+ to_string(gold) + " "
+		+ to_string(level) + " "
+		+ to_string(exp) + " "
+		+ to_string(strength) + " "
+		+ to_string(vitality) + " "
+		+ to_string(dexterity) + " "
+		+ to_string(intelligence) + " "
+		+ to_string(hp) + " "
+		+ to_string(stamina) + " "
+		+ to_string(statPoints) + " "
+		+ to_string(skillPoints);
 }

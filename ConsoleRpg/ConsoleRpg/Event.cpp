@@ -31,10 +31,7 @@ void Event::generateEvent(Character &character)
 
 void Event::enemyEncouter(Character& character)
 {
-	while (true)
-	{
-
-	}
+	//Enemy Stuffs TODO
 }
 
 void Event::puzzleEncouter(Character& character)
@@ -43,20 +40,21 @@ void Event::puzzleEncouter(Character& character)
 	int userAnswer = 0;
 	int chances = 1;
 	int randN = 0;
+
 	for (size_t i = 1; i < 10; i++)
 	{
 		//IMPLEMENT MORE PUZZLES
 		randN = rand() % 10;
-		Puzzle puzzle("Puzzles/" + std::to_string(randN) + ".txt");
+		Puzzle puzzle("Puzzles/" + to_string(randN) + ".txt");
 
 		while (!completed && chances > 0)
 		{
 			chances--;
-			std::cout << puzzle.getAsString() + "\n";
 
-			std::cout << "Your Answer: ";
-			std::cin >> userAnswer;
-			std::cout << "\n";
+			cin >> userAnswer;
+			cout << puzzle.getAsString() + "\n";
+			cout << "Your Answer: ";
+			cout << "\n";
 
 			completed = puzzle.getCorrectAnswer() == userAnswer;
 		}
@@ -65,13 +63,13 @@ void Event::puzzleEncouter(Character& character)
 		{
 			//receive random item
 			character.receiveExperience();
-			std::cout << "CONGRATS YOU SUCCEDED! \n \n";
+			cout << "CONGRATS YOU SUCCEDED! You're now with "<<character.getExp() << "XP!\n \n";
 		}
 		else
 		{
 			//IMPLEMENT WHEN XP BECOMES LESS THAN 0 AND LEVEL BIGGER THAN 1
 			character.stealExperience();
-			std::cout << "YOU FAILED! XP STEALED!\n \n";			
+			cout << "YOU FAILED! XP STEALED!\n \n";			
 		}
 	}
 }

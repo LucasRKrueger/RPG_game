@@ -26,6 +26,6 @@ class Game
 		bool playing;
 		int activeCharacter;
 		Character character;
-		std::vector<Character> characters;
-		std::string fileName;
+		vector<Character> characters;
+		string fileName;
 };
