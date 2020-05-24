@@ -107,7 +107,54 @@ void Game::saveCharacters()
 
 void Game::loadCharacter()
 {
+	ifstream inFile(fileName);
 
+	this->characters.clear();
+
+	string name = "";
+	int distanceTravelled = 0;
+	int gold = 0;
+	int level = 0;
+	int exp = 0;
+	int strength = 0;
+	int vitality = 0;
+	int dexterity = 0;
+	int intelligence = 0;
+	int hp = 0;
+	int stamina = 0;
+	int statusPoints = 0;
+	int skillPoints = 0;
+	string line = "";
+
+	if (inFile.is_open())
+	{
+		while (getline(inFile, line))
+		{
+			inFile >> name;
+			inFile >> distanceTravelled;
+			inFile >> gold;
+			inFile >> level;
+			inFile >> exp;
+			inFile >> strength;
+			inFile >> vitality;
+			inFile >> dexterity;
+			inFile >> intelligence;
+			inFile >> hp;
+			inFile >> stamina;
+			inFile >> statusPoints;
+			inFile >> skillPoints;
+
+			Character character(name, distanceTravelled, gold, level, exp,                                 strength, vitality, dexterity, intelligence, 
+				                hp, stamina, statusPoints, skillPoints);
+
+			this->characters.push_back(Character(character));
+		}
+	}
+	inFile.close();
+	if (this->characters.size() <= 0)
+	{
+		throw("No Character loaded or empty file!");
+	}
 }
 
 void Game::Travel()

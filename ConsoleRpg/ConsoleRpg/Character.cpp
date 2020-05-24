@@ -30,6 +30,39 @@ Character::Character()
 	this->statPoints = 0;
 }
 
+Character::Character(string name, int distanceTravelled, int gold, int level, int exp,
+	                 int strength, int vitality, int dexterity, int intelligence, int hp,
+	                 int stamina, int statusPoints, int skillPoints)
+{
+	this->distanceTravelled = distanceTravelled;
+
+	this->gold = gold;
+
+	this->name = name;
+	this->level = level;
+	this->exp = exp;
+	this->expNext = 0;
+
+	this->strength = strength;
+	this->vitality = vitality;
+	this->dexterity = dexterity;
+	this->intelligence = intelligence;
+
+	this->hp = hp;
+	this->hpMax = 0;
+	this->stamina = stamina;
+	this->staminaMax = 0;
+	this->damageMin = 0;
+	this->damageMax = 0;
+	this->defence = 0;
+	this->accuracy = 0;
+	this->luck = 0;
+
+	this->skillPoints = skillPoints;
+	this->statPoints = statusPoints;
+	this->updateStatus();
+}
+
 Character::~Character()
 {
 
@@ -46,10 +79,10 @@ void Character::initialize(string name)
 	this->exp = 0;
 	this->expNext = necessaryXP(this->level);
 
-	this->strength = 0;
-	this->vitality = 0;
-	this->dexterity = 0;
-	this->intelligence = 0;
+	this->strength = 5;
+	this->vitality = 5;
+	this->dexterity = 5;
+	this->intelligence = 5;
 
 	this->hpMax = (this->vitality * 2) + (this->strength/2);
 	this->hp = hpMax;
@@ -119,6 +152,7 @@ void Character::levelUp()
 string Character::getAsString() const
 {		
 	return name + " "
+		+ to_string(distanceTravelled) + " "
 		+ to_string(gold) + " "
 		+ to_string(level) + " "
 		+ to_string(exp) + " "
@@ -130,4 +164,19 @@ string Character::getAsString() const
 		+ to_string(stamina) + " "
 		+ to_string(statPoints) + " "
 		+ to_string(skillPoints);
+}
+
+void Character::updateStatus()
+{
+	this->expNext = necessaryXP(this->level);
+
+	this->hpMax = (this->vitality * 2) + (this->strength / 2);
+	this->hp = hpMax;
+	this->staminaMax = this->vitality + (this->strength / 2) + (this->dexterity / 3);
+	this->stamina = this->staminaMax;
+	this->damageMin = this->strength;
+	this->damageMax = this->strength + 2;
+	this->defence = this->dexterity + (this->intelligence / 2);
+	this->luck = this->intelligence;
+	this->accuracy = this->dexterity / 2;
 }

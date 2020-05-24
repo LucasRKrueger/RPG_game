@@ -6,6 +6,9 @@ class Character
 {
 	public:
 		Character();
+		Character(string name, int distanceTravelled, int gold, int level, int exp,
+			int strength, int vitality, int dexterity, int intelligence, int hp,
+			int stamina, int statusPoints, int skillPoints);
 		virtual ~Character();
 		
 		void initialize(const string name);
@@ -13,6 +16,7 @@ class Character
 		int necessaryXP(int level);
 		void levelUp();
 		string getAsString()const;//all of stuffs as string XD
+		void updateStatus();
 
 		inline const int& getDistanceTravelled() const {return this->distanceTravelled;}
 		inline const string& getName() const {return this->name;}
