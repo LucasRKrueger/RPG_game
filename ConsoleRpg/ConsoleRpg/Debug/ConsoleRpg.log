@@ -1,37 +1,4 @@
-﻿  Armor.cpp
-  Character.cpp
+﻿  Game.cpp
 C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
-  Enemy.cpp
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.cpp(129,89): warning C4244: 'return': conversão de 'double' para 'int', possível perda de dados
-  Event.cpp
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Enemy.cpp(10,28): warning C4244: '=': conversão de 'int' para 'float', possível perda de dados
-  Game.cpp
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,10): error C2672: 'getline': nenhuma função sobrecarregada correspondente encontrada
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,28): error C2784: 'std::basic_istream<_Elem,_Traits> &std::getline(std::basic_istream<_Elem,_Traits> &,std::basic_string<_Elem,_Traits,_Alloc> &)': não foi possível deduzir argumento de modelo para 'std::basic_istream<_Elem,_Traits> &' de 'std::ifstream'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string(78): message : consulte a declaração de 'std::getline'
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,28): error C2784: 'std::basic_istream<_Elem,_Traits> &std::getline(std::basic_istream<_Elem,_Traits> &,std::basic_string<_Elem,_Traits,_Alloc> &)': não foi possível deduzir argumento de modelo para 'std::basic_string<_Elem,_Traits,_Alloc> &' de 'const char [1]'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string(78): message : consulte a declaração de 'std::getline'
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,28): error C2780: 'std::basic_istream<_Elem,_Traits> &std::getline(std::basic_istream<_Elem,_Traits> &,std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem)': espera 3 argumentos - 2 fornecidos
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string(72): message : consulte a declaração de 'std::getline'
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,28): error C2784: 'std::basic_istream<_Elem,_Traits> &std::getline(std::basic_istream<_Elem,_Traits> &&,std::basic_string<_Elem,_Traits,_Alloc> &)': não foi possível deduzir argumento de modelo para 'std::basic_istream<_Elem,_Traits> &&' de 'std::ifstream'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string(66): message : consulte a declaração de 'std::getline'
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,28): error C2784: 'std::basic_istream<_Elem,_Traits> &std::getline(std::basic_istream<_Elem,_Traits> &&,std::basic_string<_Elem,_Traits,_Alloc> &)': não foi possível deduzir argumento de modelo para 'std::basic_string<_Elem,_Traits,_Alloc> &' de 'const char [1]'
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string(66): message : consulte a declaração de 'std::getline'
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Game.cpp(130,28): error C2780: 'std::basic_istream<_Elem,_Traits> &std::getline(std::basic_istream<_Elem,_Traits> &&,std::basic_string<_Elem,_Traits,_Alloc> &,const _Elem)': espera 3 argumentos - 2 fornecidos
-  Inventory.cpp
-C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.23.28105\include\string(23): message : consulte a declaração de 'std::getline'
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(13,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(26,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(48,26): warning C4018: '<': incompatibilidade de signed/unsigned
-  Item.cpp
-  Main.cpp
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(60,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
-  Puzzle.cpp
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Main.cpp(5,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
-  Weapon.cpp
-  Gerando Código...
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Puzzle.cpp(18,24): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(33): warning C4172: retornando o endereço da variável local ou temporário
+  ConsoleRpg.vcxproj -> C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\Debug\ConsoleRpg.exe

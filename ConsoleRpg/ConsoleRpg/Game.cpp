@@ -124,33 +124,39 @@ void Game::loadCharacter()
 	int stamina = 0;
 	int statusPoints = 0;
 	int skillPoints = 0;
+
 	string line = "";
+	stringstream str;
 
 	if (inFile.is_open())
 	{
 		while (getline(inFile, line))
 		{
-			inFile >> name;
-			inFile >> distanceTravelled;
-			inFile >> gold;
-			inFile >> level;
-			inFile >> exp;
-			inFile >> strength;
-			inFile >> vitality;
-			inFile >> dexterity;
-			inFile >> intelligence;
-			inFile >> hp;
-			inFile >> stamina;
-			inFile >> statusPoints;
-			inFile >> skillPoints;
+			str.str(line);
+			str >> name;
+			str >> distanceTravelled;
+			str >> gold;
+			str >> level;
+			str >> exp;
+			str >> strength;
+			str >> vitality;
+			str >> dexterity;
+			str >> intelligence;
+			str >> hp;
+			str >> stamina;
+			str >> statusPoints;
+			str >> skillPoints;
 
 			Character character(name, distanceTravelled, gold, level, exp,                                 strength, vitality, dexterity, intelligence, 
 				                hp, stamina, statusPoints, skillPoints);
 
 			this->characters.push_back(Character(character));
+
+			cout << "Character Loaded!";
 		}
 	}
 	inFile.close();
+
 	if (this->characters.size() <= 0)
 	{
 		throw("No Character loaded or empty file!");

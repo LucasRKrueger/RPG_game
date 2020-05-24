@@ -6,7 +6,7 @@
 #include <iomanip>
 #include <ctime>
 #include <vector>
-#include "Enemy.h"
+#include <sstream>
 
 class Game
 {
