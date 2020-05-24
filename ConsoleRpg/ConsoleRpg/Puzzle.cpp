@@ -42,11 +42,5 @@ std::string Puzzle::getAsString()
 	{
 		answers += std::to_string(i) + ": " + this->answers[i] + "\n";
 	}
-
-	/*return this->question + "\n \n" +
-		   answers + "\n" +
-		   std::to_string(this->correctAnswer) + "\n";		*/
-
-	return this->question + "\n \n" +
-		answers + "\n";
+	return this->question + "\n \n" + answers + "\n";
 }

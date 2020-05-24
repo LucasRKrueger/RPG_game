@@ -9,7 +9,7 @@ class Puzzle {
 		Puzzle(std::string fileName);
 		virtual ~Puzzle();
 		std::string getAsString();
-		const int& getCorrectAnswer()  {return this->correctAnswer;}
+		inline const int& getCorrectAnswer() {return this->correctAnswer;}
 
 	private:
 		std::string question;

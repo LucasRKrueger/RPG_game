@@ -102,15 +102,20 @@ int Character::necessaryXP(int level)
 
 void Character::levelUp()
 {
-	while (exp >= expNext)
+	if (exp >= expNext)
 	{
-		exp -= expNext;
-		level++;
+		this->exp -= this->expNext;
+		this->level++;
 
 		this->expNext = necessaryXP(this->level);
 
 		this->statPoints++;
 		this->skillPoints++;
+		std::cout << "YOU ARE NOW LEVEL " << this->level << "!" << "\n\n";
+	}
+	else
+	{
+		std::cout << "NOT ENOUGH EXP!" << "\n\n";
 	}
 }
 

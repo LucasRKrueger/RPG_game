@@ -22,6 +22,11 @@ void Game::mainMenu()
 	int activeCharacter = character.getActiveCharacter(characters);
 	cout << "CHARACTER NAME: " << characters[activeCharacter].getName() << endl << endl;
 
+	if (this->characters[activeCharacter].getExp() >= this->characters[activeCharacter].getExpNext()) 
+	{
+		std::cout << "LEVEL UP IS AVALIABLE! \n\n";
+	}
+
 	cout << "|       = MAIN MENU =      |" << endl;
 	cout << "|==========================|" << endl;
 	cout << "| 0: Quit                  |" << endl;
@@ -50,6 +55,12 @@ void Game::mainMenu()
 			break;
 		case 1:
 			Travel();
+			break;
+		case 3:
+			this->characters[activeCharacter].levelUp();
+			break;
+		case 4:
+
 			break;
 		case 5:
 			characters[activeCharacter].printStatus();

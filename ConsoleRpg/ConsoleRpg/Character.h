@@ -56,12 +56,10 @@ class Character
 		int exp;
 		int expNext;
 
-
 		int strength;
 		int vitality;
 		int dexterity;
 		int intelligence;
-
 
 		int hp;
 		int hpMax;

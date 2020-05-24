@@ -46,7 +46,7 @@ void Event::puzzleEncouter(Character& character)
 	for (size_t i = 1; i < 10; i++)
 	{
 		//IMPLEMENT MORE PUZZLES
-		randN = rand() % 20;
+		randN = rand() % 10;
 		Puzzle puzzle("Puzzles/" + std::to_string(randN) + ".txt");
 
 		while (!completed && chances > 0)
@@ -71,7 +71,7 @@ void Event::puzzleEncouter(Character& character)
 		{
 			//IMPLEMENT WHEN XP BECOMES LESS THAN 0 AND LEVEL BIGGER THAN 1
 			character.stealExperience();
-			std::cout << "YOU FAILED! \n \n";
+			std::cout << "YOU FAILED! XP STEALED!\n \n";			
 		}
 	}
 }
