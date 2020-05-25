@@ -152,7 +152,7 @@ void Game::loadCharacter()
 
 			this->characters.push_back(Character(character));
 
-			cout << "Character Loaded!";
+			cout << "Character Loaded! \n";
 		}
 	}
 	inFile.close();
