@@ -1,6 +1,7 @@
 #pragma once
 #include <stdlib.h>
 #include "Puzzle.h"
+#include "Enemy.h"
 #include "Character.h"
 class Event
 {

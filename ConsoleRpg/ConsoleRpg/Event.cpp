@@ -31,7 +31,16 @@ void Event::generateEvent(Character &character)
 
 void Event::enemyEncouter(Character& character)
 {
-	//Enemy Stuffs TODO
+	vector<Enemy> enemies;
+	int characterLevel = character.getLevel();
+	int position = 0;
+	for (size_t i = characterLevel; i > 10; i-=10)
+	{
+		Enemy enemy(rand() % characterLevel + 5);		
+	    enemies[position] = enemy;
+		position++;
+	}
+	//CREATE A COMBAT METHOD
 }
 
 void Event::puzzleEncouter(Character& character)
