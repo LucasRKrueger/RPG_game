@@ -1,4 +1,13 @@
-﻿  Game.cpp
+﻿  Enemy.cpp
+  Event.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Enemy.cpp(10,28): warning C4244: '=': conversão de 'int' para 'float', possível perda de dados
+  Game.cpp
 C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(33): warning C4172: retornando o endereço da variável local ou temporário
+  Main.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+  Gerando Código...
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Main.cpp(5,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(34): warning C4172: retornando o endereço da variável local ou temporário
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(42): warning C4172: retornando o endereço da variável local ou temporário
   ConsoleRpg.vcxproj -> C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\Debug\ConsoleRpg.exe
