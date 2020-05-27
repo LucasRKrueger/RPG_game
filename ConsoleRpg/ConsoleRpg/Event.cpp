@@ -13,6 +13,7 @@ Event::~Event()
 void Event::generateEvent(Character& character)
 {
 	int i = rand() % this->numberOfEvents;
+	i = 0;
 
 	switch (i)
 	{
@@ -32,25 +33,41 @@ void Event::generateEvent(Character& character)
 void Event::enemyEncouter(Character& character)
 {
 	vector<Enemy> enemies;
+
 	int characterLevel = character.getLevel();
-	int position = 0;
+
+	GetEnemies(characterLevel, enemies);
+
+	StartFight(enemies, character);
+}
+
+
+
+void Event::StartFight(vector<Enemy>& enemies, Character& character)
+{
 	bool isFighting = true;
-	for (size_t i = characterLevel; i > 10; i -= 10)
-	{
-		Enemy enemy(rand() % characterLevel + 5);
-		enemies[position] = enemy;
-		position++;
-	}
-	//CREATE A COMBAT METHOD	
+
 	while (isFighting)
 	{
 		ShowAttributes(enemies, character);
 
 		EnemyTurn(enemies, character);
+		if (character.characterDoesntHasHp())
+		{
+			system("CLS");
+			cout << "\nYOU ARE DEAD!\n" << endl;
+			isFighting = false;
+			continue;
+		}
+		system("CLS");
 
-		//CHARACTER TURN
+		ShowAttributes(enemies, character);
 
-		isFighting = character.characterDoesntHasHp() || AllEnemiesDontHaveHp(enemies);
+		CharacterTurn(enemies, character);
+		
+		isFighting = AllEnemiesDontHaveHp(enemies);
+
+		system("CLS");
 	}
 }
 
@@ -93,7 +110,7 @@ void Event::puzzleEncouter(Character& character)
 	}
 }
 
-bool Event::AllEnemiesDontHaveHp(vector<Enemy> enemies)
+bool Event::AllEnemiesDontHaveHp(vector<Enemy>& enemies)
 {
 	int enemiesWithHp = 0;
 	for (size_t i = 0; i < enemies.size(); i++)
@@ -103,15 +120,36 @@ bool Event::AllEnemiesDontHaveHp(vector<Enemy> enemies)
 	return enemiesWithHp == 0;
 }
 
-vector<int> Event::EnemyAction(vector<Enemy> enemies)
+vector<int> Event::EnemyAction(vector<Enemy>& enemies)
 {	
 	vector<int> actions;
 
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
+		actions.push_back(i);
 		actions[i] = rand() % 2;
 	}
 	return actions;
+}
+
+void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
+{
+	int enemy;
+	int action;	
+
+	cout << "Select 1 to punch and 2 to defend" << endl;
+	cin >> action;
+
+	if (action == 1)
+	{
+		cout << "Which enemy do you want to punch: " << endl;
+	}
+	cin >> enemy;
+
+	int characterDamage = character.getDamage();
+
+	cout << "Enemy " << enemy << "taked " << characterDamage << " damage!" << endl;
+	enemies[enemy-1].takeDamage(characterDamage);
 }
 
 void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
@@ -121,21 +159,36 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 	{
 		if (actions[i] == 1)
 		{
+			cout << "You taked" << enemies[i].getDamage() << " Damage!" << endl;
 			character.takeDamage(enemies[i].getDamage());
 		}
 	}
 }
 
-void Event::ShowAttributes(std::vector<Enemy>& enemies, Character& character)
+void Event::ShowAttributes(vector<Enemy>& enemies, Character& character)
 {
+	system("CLS");
 	cout << "ENEMIES \n\n" << endl;
 
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
-		cout << enemies[i].getBattleAtributes();
+		cout << "Enemy " << i + 1 << endl;
+		cout << enemies[i].getBattleAtributes() << "\n";		
 	}
 	cout << "\n\n";
 
 
 	cout << "YOU \n\n" << character.getBattleAtributes();
+}
+
+void Event::GetEnemies(int characterLevel, std::vector<Enemy>& enemies)
+{
+	int position = 0;
+	for (size_t i = characterLevel; i > 2; i -= 2)
+	{
+		Enemy enemy(rand() % characterLevel + 5);
+		enemies.push_back(position);
+		enemies[position] = enemy;
+		position++;
+	}	
 }

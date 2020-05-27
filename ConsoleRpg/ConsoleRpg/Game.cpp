@@ -33,11 +33,10 @@ void Game::mainMenu()
 	cout << "| 1: Travel                |" << endl;
 	cout << "| 2: Shop                  |" << endl;
 	cout << "| 3: Level Up              |" << endl;
-	cout << "| 4: Rest                  |" << endl;
-	cout << "| 5: Character sheet       |" << endl;
-	cout << "| 6: Create new character  |" << endl;
-	cout << "| 7: Save Character        |" << endl;
-	cout << "| 8: Load Character        |" << endl;
+	cout << "| 4: Character sheet       |" << endl;
+	cout << "| 5: Create new character  |" << endl;
+	cout << "| 6: Save Character        |" << endl;
+	cout << "| 7: Load Character        |" << endl;
 	cout << "|==========================|" << endl;
 
 	cout << endl;
@@ -56,24 +55,23 @@ void Game::mainMenu()
 		case 1:
 			Travel();
 			break;
+		case 2:
+			break;
 		case 3:
 			this->characters[activeCharacter].levelUp();
 			break;
 		case 4:
-
-			break;
-		case 5:
 			characters[activeCharacter].printStatus();
 			break;
-		case 6:
+		case 5:
 			cin.ignore();
 			createNewCharacter();
 			saveCharacters();
 			break;
-		case 7:
+		case 6:
 			saveCharacters();
 			break;
-		case 8:
+		case 7:
 			loadCharacter();
 			break;
 

@@ -15,5 +15,4 @@ class Puzzle {
 		string question;
 		vector<string>answers;
 		int correctAnswer;
-
 };
