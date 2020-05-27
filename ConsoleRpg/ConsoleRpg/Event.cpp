@@ -41,8 +41,6 @@ void Event::enemyEncouter(Character& character)
 	StartFight(enemies, character);
 }
 
-
-
 void Event::StartFight(vector<Enemy>& enemies, Character& character)
 {
 	bool isFighting = true;
@@ -52,6 +50,7 @@ void Event::StartFight(vector<Enemy>& enemies, Character& character)
 		ShowAttributes(enemies, character);
 
 		EnemyTurn(enemies, character);
+
 		if (character.characterDoesntHasHp())
 		{
 			system("CLS");
@@ -59,6 +58,7 @@ void Event::StartFight(vector<Enemy>& enemies, Character& character)
 			isFighting = false;
 			continue;
 		}
+
 		system("CLS");
 
 		ShowAttributes(enemies, character);
@@ -132,6 +132,19 @@ vector<int> Event::EnemyAction(vector<Enemy>& enemies)
 	return actions;
 }
 
+void Event::GetEnemies(int characterLevel, std::vector<Enemy>& enemies)
+{
+	int position = 0;
+	if(characterLevel)
+	for (size_t i = characterLevel; i > 2; i -= 2)
+	{
+		Enemy enemy(rand() % characterLevel + 5);
+		enemies.push_back(position);
+		enemies[position] = enemy;
+		position++;
+	}
+}
+
 void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 {
 	int enemy;
@@ -181,14 +194,3 @@ void Event::ShowAttributes(vector<Enemy>& enemies, Character& character)
 	cout << "YOU \n\n" << character.getBattleAtributes();
 }
 
-void Event::GetEnemies(int characterLevel, std::vector<Enemy>& enemies)
-{
-	int position = 0;
-	for (size_t i = characterLevel; i > 2; i -= 2)
-	{
-		Enemy enemy(rand() % characterLevel + 5);
-		enemies.push_back(position);
-		enemies[position] = enemy;
-		position++;
-	}	
-}
