@@ -10,9 +10,9 @@ Event::~Event()
 
 }
 
-void Event::generateEvent(Character &character)
+void Event::generateEvent(Character& character)
 {
-	int i = rand()% this->numberOfEvents;
+	int i = rand() % this->numberOfEvents;
 
 	switch (i)
 	{
@@ -35,15 +35,29 @@ void Event::enemyEncouter(Character& character)
 	int characterLevel = character.getLevel();
 	int position = 0;
 	bool isFighting = true;
-	for (size_t i = characterLevel; i > 10; i-=10)
+	for (size_t i = characterLevel; i > 10; i -= 10)
 	{
-		Enemy enemy(rand() % characterLevel + 5);		
-	    enemies[position] = enemy;
+		Enemy enemy(rand() % characterLevel + 5);
+		enemies[position] = enemy;
 		position++;
 	}
 	//CREATE A COMBAT METHOD	
 	while (isFighting)
-	{		
+	{
+		cout << "ENEMIES \n\n" << endl;
+
+		for (size_t i = 0; i < enemies.size(); i++)
+		{
+			cout << enemies[i].getBattleAtributes();
+		}
+		cout << "\n\n";
+
+
+		cout << "YOU \n\n" << character.getBattleAtributes();
+
+		//Enemy will always start the turn
+		//EnemyAction()
+		//CharacterTurn
 		isFighting = character.characterDoesntHasHp() || AllEnemiesDontHaveHp(enemies);
 	}
 }
@@ -75,15 +89,14 @@ void Event::puzzleEncouter(Character& character)
 
 		if (completed)
 		{
-			//receive random item
 			character.receiveExperience();
-			cout << "CONGRATS YOU SUCCEDED! You're now with "<<character.getExp() << "XP!\n \n";
+			cout << "CONGRATS YOU SUCCEDED! You're now with " << character.getExp() << "XP!\n \n";
 		}
 		else
 		{
 			//IMPLEMENT WHEN XP BECOMES LESS THAN 0 AND LEVEL BIGGER THAN 1
 			character.stealExperience();
-			cout << "YOU FAILED! XP STEALED!\n \n";			
+			cout << "YOU FAILED! XP STEALED!\n \n";
 		}
 	}
 }
