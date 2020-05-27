@@ -27,4 +27,5 @@ class Enemy
 		inline int getDamage()const {return rand()% this->damageMax - this->damageMin;};
 		inline int getExp()const {return this->level*100;}
 		inline int getHp() const {return this->hp;}
+		inline 
 };

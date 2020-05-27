@@ -44,20 +44,12 @@ void Event::enemyEncouter(Character& character)
 	//CREATE A COMBAT METHOD	
 	while (isFighting)
 	{
-		cout << "ENEMIES \n\n" << endl;
+		ShowAttributes(enemies, character);
 
-		for (size_t i = 0; i < enemies.size(); i++)
-		{
-			cout << enemies[i].getBattleAtributes();
-		}
-		cout << "\n\n";
+		EnemyTurn(enemies, character);
 
+		//CHARACTER TURN
 
-		cout << "YOU \n\n" << character.getBattleAtributes();
-
-		//Enemy will always start the turn
-		//EnemyAction()
-		//CharacterTurn
 		isFighting = character.characterDoesntHasHp() || AllEnemiesDontHaveHp(enemies);
 	}
 }
@@ -104,9 +96,46 @@ void Event::puzzleEncouter(Character& character)
 bool Event::AllEnemiesDontHaveHp(vector<Enemy> enemies)
 {
 	int enemiesWithHp = 0;
-	for (size_t i = 1; i < enemies.size(); i++)
+	for (size_t i = 0; i < enemies.size(); i++)
 	{
 		enemiesWithHp = enemies[i].getHp() > 0 ? enemiesWithHp + 1 : enemiesWithHp;
 	}
 	return enemiesWithHp == 0;
+}
+
+vector<int> Event::EnemyAction(vector<Enemy> enemies)
+{	
+	vector<int> actions;
+
+	for (size_t i = 0; i < enemies.size(); i++)
+	{
+		actions[i] = rand() % 2;
+	}
+	return actions;
+}
+
+void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
+{
+	vector<int> actions = EnemyAction(enemies);
+	for (size_t i = 0; i < actions.size(); i++)
+	{
+		if (actions[i] == 1)
+		{
+			character.takeDamage(enemies[i].getDamage());
+		}
+	}
+}
+
+void Event::ShowAttributes(std::vector<Enemy>& enemies, Character& character)
+{
+	cout << "ENEMIES \n\n" << endl;
+
+	for (size_t i = 0; i < enemies.size(); i++)
+	{
+		cout << enemies[i].getBattleAtributes();
+	}
+	cout << "\n\n";
+
+
+	cout << "YOU \n\n" << character.getBattleAtributes();
 }
