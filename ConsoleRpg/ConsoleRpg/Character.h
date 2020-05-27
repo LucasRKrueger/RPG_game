@@ -32,11 +32,14 @@ class Character
 		inline const int& getAccuracy() const {return this->accuracy;}
 		inline const int& getActiveCharacter(vector<Character> characters) const {return characters.size() - 1;}
 
+		inline const bool& characterDoesntHasHp() const {return this->hp < 0;}
+
 		inline void setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}
 		inline void travel() {this->distanceTravelled++;}
 
 		inline void stealExperience() {this->exp -= this->level * 50;}
 		inline void receiveExperience() {this->exp += this->level * 10;}
+		inline void takeDamage(int damage) {this->hp -= damage;}
 
 	private:
 		int distanceTravelled;

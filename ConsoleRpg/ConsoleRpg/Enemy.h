@@ -2,6 +2,7 @@
 
 #include <stdlib.h>
 #include <string>
+#include <vector>
 
 using namespace std;
 class Enemy
@@ -24,4 +25,5 @@ class Enemy
 		inline void takeDamage(int damage) {this->hp -= damage;}
 		inline int getDamage()const {return rand()% this->damageMax - this->damageMin;};
 		inline int getExp()const {return this->level*100;}
+		inline int getHp() const {return this->hp;}
 };

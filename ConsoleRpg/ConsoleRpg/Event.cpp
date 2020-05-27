@@ -34,13 +34,18 @@ void Event::enemyEncouter(Character& character)
 	vector<Enemy> enemies;
 	int characterLevel = character.getLevel();
 	int position = 0;
+	bool isFighting = true;
 	for (size_t i = characterLevel; i > 10; i-=10)
 	{
 		Enemy enemy(rand() % characterLevel + 5);		
 	    enemies[position] = enemy;
 		position++;
 	}
-	//CREATE A COMBAT METHOD
+	//CREATE A COMBAT METHOD	
+	while (isFighting)
+	{		
+		isFighting = character.characterDoesntHasHp() || AllEnemiesDontHaveHp(enemies);
+	}
 }
 
 void Event::puzzleEncouter(Character& character)
@@ -81,4 +86,14 @@ void Event::puzzleEncouter(Character& character)
 			cout << "YOU FAILED! XP STEALED!\n \n";			
 		}
 	}
+}
+
+bool Event::AllEnemiesDontHaveHp(vector<Enemy> enemies)
+{
+	int enemiesWithHp = 0;
+	for (size_t i = 1; i < enemies.size(); i++)
+	{
+		enemiesWithHp = enemies[i].getHp() > 0 ? enemiesWithHp + 1 : enemiesWithHp;
+	}
+	return enemiesWithHp == 0;
 }

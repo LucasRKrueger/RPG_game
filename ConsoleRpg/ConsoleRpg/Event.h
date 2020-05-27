@@ -11,6 +11,8 @@ public:
 	void generateEvent(Character& character);
 	void enemyEncouter(Character& character);
 	void puzzleEncouter(Character& character);
+	void Fighting(Character& character, Enemy& enemy);
+	bool AllEnemiesDontHaveHp(vector<Enemy> enemies);
 private:
 	int numberOfEvents;
 };
