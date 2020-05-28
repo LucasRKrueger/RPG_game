@@ -19,7 +19,13 @@ void Game::initGame()
 //Functions
 void Game::mainMenu()
 {
+	if (character.characterDoesntHasHp())
+	{
+		createNewCharacter();
+	}
+
 	int activeCharacter = character.getActiveCharacter(characters);
+
 	cout << "CHARACTER NAME: " << characters[activeCharacter].getName() << endl << endl;
 
 	if (this->characters[activeCharacter].getExp() >= this->characters[activeCharacter].getExpNext()) 

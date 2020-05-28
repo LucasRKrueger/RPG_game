@@ -5,8 +5,8 @@ Enemy::Enemy(int level)
 	this->level = level;
 	this->hpMax = level * 10;
 	this->hp = this->hpMax;	
-	this->damageMin = this->level * 4;
-	this->damageMax = this->level * 5;
+	this->damageMin = this->level * 2;
+	this->damageMax = this->level * 3;
 	this->dropChance = rand() % 100;
 	this->defence = rand() % 100;
 	this->accuracy = rand() % 100;
@@ -29,9 +29,9 @@ string Enemy::getAsString() const
 }
 string Enemy::getBattleAtributes() const
 {
-	return  "Level: " + to_string(this->level) + "\n" +
-		    "Hp: " + to_string(this->hp) + " / " + to_string(this->hpMax) + "\n" +
-		    "Damage: " + to_string(this->damageMin) + " - " + to_string(this->damageMax) +
+	return  "|Level: " + to_string(this->level) + "\n" +
+		    "|Hp: " + to_string(this->hp) + " / " + to_string(this->hpMax) + "\n" +
+		    "|Damage: " + to_string(this->damageMin) + " - " + to_string(this->damageMax) +
 		    "\n" +
-		    "Defence: " + to_string(this->defence) + "\n";
+		    "|Defence: " + to_string(this->defence) + "\n";
 }

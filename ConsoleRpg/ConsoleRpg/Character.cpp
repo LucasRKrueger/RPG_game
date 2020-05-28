@@ -183,9 +183,9 @@ void Character::updateStatus()
 
 string Character::getBattleAtributes() const
 {
-	return  "Level: " + to_string(this->level) + "\n" +
-		    "Hp: " + to_string(this->hp) + " / " + to_string(this->hpMax) + "\n" +
-		    "Damage: " + to_string(this->damageMin) + " - " + to_string(this->damageMax) +
+	return  "|Level: " + to_string(this->level) + "\n" +
+		    "|Hp: " + to_string(this->hp) + " / " + to_string(this->hpMax) + "\n" +
+		    "|Damage: " + to_string(this->damageMin) + " - " + to_string(this->damageMax) +
 		    "\n" +
-		    "Defence: " + to_string(this->defence) + "\n";
+		    "|Defence: " + to_string(this->defence) + "\n";
 }

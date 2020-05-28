@@ -31,7 +31,7 @@ class Character
 		inline const int& getDamageMax() const {return this->damageMax;}
 		inline const int& getDefence() const {return this->defence;}
 		inline const int& getAccuracy() const {return this->accuracy;}
-		inline int getDamage()const {return rand()% this->damageMin + this->damageMax;};
+		inline int getDamage()const {return rand()% this->damageMax + this->damageMin;};
 
 		inline const int& getActiveCharacter(vector<Character> characters) const {return characters.size() - 1;}
 
