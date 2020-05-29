@@ -39,9 +39,11 @@ class Character
 		inline void travel() {this->distanceTravelled++;}
 
 		inline void stealExperience() {this->exp -= this->level * 50;}
-		inline void receiveExperience() {this->exp += this->level * 10;}
 
-		inline const bool& characterDoesntHasHp() const {return this->hp < 0;}
+		inline void receiveExperience() {this->exp += this->level * 10;}
+		inline void receiveExperience(int qtdEnemies) {this->exp += qtdEnemies * (this->level * 10);}
+
+		inline const bool& characterDoesntHasHp() const {return this->hp <= 0;}
 		inline void takeDamage(int damage) {this->hp -= damage;}
 
 	private:

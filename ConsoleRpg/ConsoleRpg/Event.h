@@ -17,7 +17,7 @@ public:
 	void ShowAttributes(vector<Enemy>& enemies, Character& character);
 	void puzzleEncouter(Character& character);
 	void Fighting(Character& character, Enemy& enemy);
-	bool AllEnemiesDontHaveHp(vector<Enemy>& enemies);
+	bool AllEnemiesWithoutHp(vector<Enemy>& enemies);
 	vector<int>EnemyAction(vector<Enemy>& enemies);
 private:
 	int numberOfEvents;

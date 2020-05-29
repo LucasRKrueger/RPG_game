@@ -14,8 +14,10 @@ class Game
 		Game();
 		virtual ~Game();	
 		void initGame();
-		void mainMenu();	
+		void mainMenu();
+		void levelUpAvaliable(int activeCharacter);
 		void createNewCharacter();
+		void reCreateCharacter(string name);
 		void saveCharacters();
 		void loadCharacter();
 		void Travel();

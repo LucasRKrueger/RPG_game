@@ -19,42 +19,36 @@ void Game::initGame()
 //Functions
 void Game::mainMenu()
 {
-	if (character.characterDoesntHasHp())
-	{
-		createNewCharacter();
-	}
-
 	int activeCharacter = character.getActiveCharacter(characters);
 
-	cout << "CHARACTER NAME: " << characters[activeCharacter].getName() << endl << endl;
-
-	if (this->characters[activeCharacter].getExp() >= this->characters[activeCharacter].getExpNext()) 
+	if (characters[activeCharacter].getHp() > 0)
 	{
-		cout << "LEVEL UP IS AVALIABLE! \n\n";
-	}
+		cout << "CHARACTER NAME: " << characters[activeCharacter].getName() << endl << endl;
 
-	cout << "|       = MAIN MENU =      |" << endl;
-	cout << "|==========================|" << endl;
-	cout << "| 0: Quit                  |" << endl;
-	cout << "| 1: Travel                |" << endl;
-	cout << "| 2: Shop                  |" << endl;
-	cout << "| 3: Level Up              |" << endl;
-	cout << "| 4: Character sheet       |" << endl;
-	cout << "| 5: Create new character  |" << endl;
-	cout << "| 6: Save Character        |" << endl;
-	cout << "| 7: Load Character        |" << endl;
-	cout << "|==========================|" << endl;
+		levelUpAvaliable(activeCharacter);
 
-	cout << endl;
+		cout << "|       = MAIN MENU =      |" << endl;
+		cout << "|==========================|" << endl;
+		cout << "| 0: Quit                  |" << endl;
+		cout << "| 1: Travel                |" << endl;
+		cout << "| 2: Shop                  |" << endl;
+		cout << "| 3: Level Up              |" << endl;
+		cout << "| 4: Character sheet       |" << endl;
+		cout << "| 5: Create new character  |" << endl;
+		cout << "| 6: Save Character        |" << endl;
+		cout << "| 7: Load Character        |" << endl;
+		cout << "|==========================|" << endl;
 
-	cout << endl << "Choice: ";
-	cin >> choice;
-	cout << endl;
+		cout << endl;
 
-	system("CLS");
+		cout << endl << "Choice: ";
+		cin >> choice;
+		cout << endl;
 
-	switch (choice)
-	{
+		system("CLS");
+
+		switch (choice)
+		{
 		case 0:
 			playing = false;
 			break;
@@ -83,13 +77,33 @@ void Game::mainMenu()
 
 		default:
 			break;
+		}
+	}
+	else
+	{
+		cout << "Character Recreated! \n\n";
+		reCreateCharacter(characters[activeCharacter].getName());
 	}
 }
+void Game::levelUpAvaliable(int activeCharacter)
+{
+	if (this->characters[activeCharacter].getExp() >= this->characters[activeCharacter].getExpNext())
+	{
+		cout << "LEVEL UP IS AVALIABLE! \n\n";
+	}
+}
+void Game::reCreateCharacter(string _name)
+{
+	characters.push_back(Character());
+	activeCharacter = character.getActiveCharacter(characters);
+	characters[activeCharacter].initialize(_name);
+}
+
 void Game::createNewCharacter()
 {
 	string name;
 	cout << "Character Name: ";
-	getline(cin, name);
+	getline(cin, name);	
 	characters.push_back(Character());
 	activeCharacter = character.getActiveCharacter(characters);
 	characters[activeCharacter].initialize(name);
@@ -174,4 +188,5 @@ void Game::Travel()
 	Event event;
 
 	event.generateEvent(this->characters[activeCharacter]);
+
 }

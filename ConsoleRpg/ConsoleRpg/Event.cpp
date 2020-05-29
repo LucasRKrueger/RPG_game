@@ -57,7 +57,7 @@ void Event::StartFight(vector<Enemy>& enemies, Character& character)
 		{
 			system("CLS");
 
-			cout << "\nYOU ARE DEAD!\n" << endl;
+			cout << "YOU ARE DEAD!\n" << endl;
 
 			isFighting = false;
 
@@ -70,7 +70,19 @@ void Event::StartFight(vector<Enemy>& enemies, Character& character)
 
 		CharacterTurn(enemies, character);
 		
-		isFighting = AllEnemiesDontHaveHp(enemies);
+		isFighting = AllEnemiesWithoutHp(enemies);
+
+		if (!isFighting)
+		{
+			
+			if (enemies.size() > 1)
+			{
+				cout << "YOU DEFEATED ALL THE ENEMIES!";
+			}
+			character.receiveExperience(enemies.size());
+			cout << "You're now with " << character.getExp() << "XP!" << endl;
+			system("pause");
+		}
 
 		system("CLS");
 	}
@@ -115,14 +127,18 @@ void Event::puzzleEncouter(Character& character)
 	}
 }
 
-bool Event::AllEnemiesDontHaveHp(vector<Enemy>& enemies)
+bool Event::AllEnemiesWithoutHp(vector<Enemy>& enemies)
 {
-	int enemiesWithHp = 0;
+	int enemiesWithoutHp = 0;
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
-		enemiesWithHp = enemies[i].getHp() > 0 ? enemiesWithHp + 1 : enemiesWithHp;
+		if (enemies[i].getHp() <= 0)
+		{
+			enemiesWithoutHp += 1;
+			cout << "YOU DEFEATED THE ENEMY " << i+1 << "\n\n"<<endl;
+		}
 	}
-	return !enemiesWithHp == 0;
+	return enemiesWithoutHp == 0;
 }
 
 vector<int> Event::EnemyAction(vector<Enemy>& enemies)
@@ -181,7 +197,7 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 
 	system("CLS");
 
-	cout << "Enemy " << enemy << " taked " << characterDamage << " damage!" << endl;
+	cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
 
 	enemies[enemy-1].takeDamage(characterDamage);
 
@@ -196,7 +212,7 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 		if (actions[i] == 1)
 		{
 			system("CLS");
-			cout << "You taked " << enemies[i].getDamage() << " Damage!" << endl;
+			cout << "You taked " << enemies[i].getDamage() << " Damage!\n" << endl;
 			character.takeDamage(enemies[i].getDamage());
 			system("pause");
 		}
@@ -206,7 +222,7 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 void Event::ShowAttributes(vector<Enemy>& enemies, Character& character)
 {
 	system("CLS");
-	cout << "ENEMIES " << endl;
+	cout << "ENEMIES \n " << endl;
 
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
@@ -215,7 +231,5 @@ void Event::ShowAttributes(vector<Enemy>& enemies, Character& character)
 	}
 	cout << "\n\n";
 
-
 	cout << "YOU \n\n" << character.getBattleAtributes() << "\n";
 }
-
