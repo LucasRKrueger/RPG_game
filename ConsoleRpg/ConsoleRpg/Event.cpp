@@ -188,6 +188,12 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 		cout << "Which enemy do you want to punch: " << endl;
 		cin >> enemy;
 	}
+	else if (action != 1)
+	{
+		character.getDefence();
+		//ALLY WILL RECEIVE ARMOR THAT WILL BE LIKE (DEFENCE/2) TO REDUCE DAMAGE
+		//JUST ONE ROUND
+	}
 	else 
 	{
 		enemy = 1;
@@ -215,6 +221,12 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 			cout << "You taked " << enemies[i].getDamage() << " Damage!\n" << endl;
 			character.takeDamage(enemies[i].getDamage());
 			system("pause");
+		}
+		else
+		{
+			enemies[i].getDefence();
+			//ENEMY WILL RECEIVE ARMOR THAT WILL BE LIKE (DEFENCE/2) TO REDUCE DAMAGE
+		    //JUST ONE ROUND
 		}
 	}
 }
