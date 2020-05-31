@@ -69,12 +69,12 @@ void Event::StartFight(vector<Enemy>& enemies, Character& character)
 		ShowAttributes(enemies, character);
 
 		CharacterTurn(enemies, character);
-		
+
 		isFighting = AllEnemiesWithoutHp(enemies);
 
 		if (!isFighting)
 		{
-			
+
 			if (enemies.size() > 1)
 			{
 				cout << "YOU DEFEATED ALL THE ENEMIES!";
@@ -135,14 +135,14 @@ bool Event::AllEnemiesWithoutHp(vector<Enemy>& enemies)
 		if (enemies[i].getHp() <= 0)
 		{
 			enemiesWithoutHp += 1;
-			cout << "YOU DEFEATED THE ENEMY " << i+1 << "\n\n"<<endl;
+			cout << "YOU DEFEATED THE ENEMY " << i + 1 << "\n\n" << endl;
 		}
 	}
 	return enemiesWithoutHp == 0;
 }
 
 vector<int> Event::EnemyAction(vector<Enemy>& enemies)
-{	
+{
 	vector<int> actions;
 
 	for (size_t i = 0; i < enemies.size(); i++)
@@ -178,7 +178,7 @@ void Event::GetEnemies(int characterLevel, std::vector<Enemy>& enemies)
 void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 {
 	int enemy;
-	int action;	
+	int action;
 
 	cout << "Select 1 to punch and 2 to defend" << endl;
 	cin >> action;
@@ -190,11 +190,9 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 	}
 	else if (action != 1)
 	{
-		character.getDefence();
-		//ALLY WILL RECEIVE ARMOR THAT WILL BE LIKE (DEFENCE/2) TO REDUCE DAMAGE
-		//JUST ONE ROUND
+		character.setIsDefending(true);
 	}
-	else 
+	else
 	{
 		enemy = 1;
 	}
@@ -203,9 +201,17 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 
 	system("CLS");
 
-	cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
+	if (enemies[enemy].getIsDefending())
+	{
+		cout << "Enemy " << enemy << " taked " << characterDamage - (enemies[enemy].getDefence()/2) << " damage!\n" << endl;
+		enemies[enemy - 1].takeDamage(characterDamage - (enemies[enemy].getDefence()/2));
+	}
+	else
+	{
+		cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
+		enemies[enemy - 1].takeDamage(characterDamage);
+	}
 
-	enemies[enemy-1].takeDamage(characterDamage);
 
 	system("pause");
 }
@@ -218,15 +224,23 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 		if (actions[i] == 1)
 		{
 			system("CLS");
-			cout << "You taked " << enemies[i].getDamage() << " Damage!\n" << endl;
-			character.takeDamage(enemies[i].getDamage());
+			if (character.getIsDefending())
+			{
+				character.takeDamage(enemies[i].getDamage()-(character.getDefence() / 2));
+				cout << "You taked " << enemies[i].getDamage() - (character.getDefence() / 2) << " Damage!\n" << endl;
+				character.setIsDefending(false);
+			}
+			else
+			{
+				cout << "You taked " << enemies[i].getDamage() << " Damage!\n" << endl;
+				character.takeDamage(enemies[i].getDamage());
+			}
 			system("pause");
 		}
 		else
 		{
-			enemies[i].getDefence();
-			//ENEMY WILL RECEIVE ARMOR THAT WILL BE LIKE (DEFENCE/2) TO REDUCE DAMAGE
-		    //JUST ONE ROUND
+			enemies[i].setIsDefending(true);
+		
 		}
 	}
 }
@@ -239,7 +253,7 @@ void Event::ShowAttributes(vector<Enemy>& enemies, Character& character)
 	for (size_t i = 0; i < enemies.size(); i++)
 	{
 		cout << "Enemy " << i + 1 << endl;
-		cout << enemies[i].getBattleAtributes() << "\n";		
+		cout << enemies[i].getBattleAtributes() << "\n";
 	}
 	cout << "\n\n";
 

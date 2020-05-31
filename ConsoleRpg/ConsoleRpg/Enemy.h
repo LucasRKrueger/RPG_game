@@ -16,6 +16,7 @@ class Enemy
 		float dropChance;
 		int defence;
 		int accuracy;
+		bool isDefending;
 
 	public:
 		Enemy(int level = 0);
@@ -28,4 +29,6 @@ class Enemy
 		inline int getExp() const {return this->level*100;}
 		inline int getHp() const {return this->hp;}		
 		inline int getDefence()const {return this->defence;}
+		inline bool getIsDefending()const {this->isDefending;}
+		inline bool setIsDefending(bool isDefending) {this->isDefending = isDefending;}
 };

@@ -5,7 +5,7 @@ Character::Character()
 	this->distanceTravelled = 0;
 
 	this->gold = 0;
-
+	
 	this->name = "";
 	this->level = 0;
 	this->exp = 0;
@@ -25,6 +25,7 @@ Character::Character()
 	this->defence = 0;
 	this->accuracy = 0;
 	this->luck = 0;
+	this->isDefending = false;
 
 	this->skillPoints = 0;
 	this->statPoints = 0;
@@ -57,6 +58,7 @@ Character::Character(string name, int distanceTravelled, int gold, int level, in
 	this->defence = 0;
 	this->accuracy = 0;
 	this->luck = 0;
+	this->isDefending = false;
 
 	this->skillPoints = skillPoints;
 	this->statPoints = statusPoints;
@@ -93,6 +95,7 @@ void Character::initialize(string name)
 	this->defence = this->dexterity + (this->intelligence / 2);
 	this->luck = this->intelligence;
 	this->accuracy = this->dexterity / 2;
+	this->isDefending = false;
 
 
 	this->skillPoints = 0;

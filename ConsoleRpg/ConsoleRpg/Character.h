@@ -32,6 +32,9 @@ class Character
 		inline const int& getDefence() const {return this->defence;}
 		inline const int& getAccuracy() const {return this->accuracy;}
 		inline int getDamage()const {return rand()% this->damageMax + this->damageMin;};
+		inline bool getIsDefending()const {this->isDefending;}
+		inline bool setIsDefending(bool isDefending) {this->isDefending = isDefending;}
+
 
 		inline const int& getActiveCharacter(vector<Character> characters) const {return characters.size() - 1;}
 
@@ -77,6 +80,7 @@ class Character
 		int defence;
 		int accuracy;
 		int luck;
+		bool isDefending;
 
 		int statPoints;
 		int skillPoints;
