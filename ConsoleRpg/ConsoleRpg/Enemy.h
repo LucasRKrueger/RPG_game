@@ -29,6 +29,6 @@ class Enemy
 		inline int getExp() const {return this->level*100;}
 		inline int getHp() const {return this->hp;}		
 		inline int getDefence()const {return this->defence;}
-		inline bool getIsDefending()const {this->isDefending;}
-		inline bool setIsDefending(bool isDefending) {this->isDefending = isDefending;}
+		inline bool getIsDefending()const {return this->isDefending;}
+		inline void setIsDefending(bool isDefending) {this->isDefending = isDefending;}
 };

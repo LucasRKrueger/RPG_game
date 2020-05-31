@@ -203,8 +203,10 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 
 	if (enemies[enemy].getIsDefending())
 	{
+		cout << "CHARACTER IS DEFENDING\n" << endl;
 		cout << "Enemy " << enemy << " taked " << characterDamage - (enemies[enemy].getDefence()/2) << " damage!\n" << endl;
 		enemies[enemy - 1].takeDamage(characterDamage - (enemies[enemy].getDefence()/2));
+		enemies[enemy - 1].setIsDefending(false);
 	}
 	else
 	{
@@ -226,6 +228,7 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 			system("CLS");
 			if (character.getIsDefending())
 			{
+				cout << "ENEMY IS DEFENDING\n" << endl;
 				character.takeDamage(enemies[i].getDamage()-(character.getDefence() / 2));
 				cout << "You taked " << enemies[i].getDamage() - (character.getDefence() / 2) << " Damage!\n" << endl;
 				character.setIsDefending(false);
