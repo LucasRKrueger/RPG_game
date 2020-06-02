@@ -35,7 +35,6 @@ class Character
 		inline bool getIsDefending()const {return this->isDefending;}
 		inline void setIsDefending(bool isDefending) {this->isDefending = isDefending;}
 
-
 		inline const int& getActiveCharacter(vector<Character> characters) const {return characters.size() - 1;}
 
 		inline void setDistanceTravelled(const int& distance) {this->distanceTravelled = distance;}

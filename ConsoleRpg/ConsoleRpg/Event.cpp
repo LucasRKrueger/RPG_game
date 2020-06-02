@@ -191,6 +191,10 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 	else if (action != 1)
 	{
 		character.setIsDefending(true);
+		for (size_t i = 1; i < enemies.size(); i++)
+		{
+			enemies[i].setIsDefending(false);
+		}
 	}
 	else
 	{
@@ -203,11 +207,16 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 
 	if (action == 1)
 	{
-		if (enemies[enemy].getIsDefending())
+		if (enemies[enemy-1].getIsDefending())
 		{
+			bool damageIsGreaterThanZero = characterDamage - (enemies[enemy - 1].getDefence() / 2) > 0;
+			characterDamage -= enemies[enemy - 1].getDefence() / 2;
+			characterDamage = damageIsGreaterThanZero ? characterDamage : 0;
+
 			cout << "ENEMY IS DEFENDING\n" << endl;
-			cout << "Enemy " << enemy << " taked " << characterDamage - (enemies[enemy].getDefence() / 2) << " damage!\n" << endl;
-			enemies[enemy - 1].takeDamage(characterDamage - (enemies[enemy].getDefence() / 2));
+			cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
+
+			enemies[enemy - 1].takeDamage(characterDamage);
 			enemies[enemy - 1].setIsDefending(false);
 		}
 		else
@@ -222,29 +231,43 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 {
 	vector<int> actions = EnemyAction(enemies);
+	int enemyDamage;
+
 	for (size_t i = 0; i < actions.size(); i++)
 	{
 		if (actions[i] == 1)
 		{
+			enemyDamage = enemies[i].getDamage();	
+
 			system("CLS");
+
 			if (character.getIsDefending())
 			{
 				cout << "YOU ARE DEFENDING\n" << endl;
-				character.takeDamage(enemies[i].getDamage()-(character.getDefence() / 2));
-				cout << "You taked " << enemies[i].getDamage() - (character.getDefence() / 2) << " Damage!\n" << endl;
+
+				bool damageIsGreaterThanZero = enemyDamage - (character.getDefence() / 2) > 0;
+
+				enemyDamage -= character.getDefence() / 2;
+				enemyDamage = damageIsGreaterThanZero ? enemyDamage : 0;
+
+				character.takeDamage(enemyDamage);
+
+				cout << "You taked " << enemyDamage << " Damage!\n" << endl;
+
 				character.setIsDefending(false);
 			}
 			else
 			{
-				cout << "You taked " << enemies[i].getDamage() << " Damage!\n" << endl;
-				character.takeDamage(enemies[i].getDamage());
+				cout << "You taked " << enemyDamage << " Damage!\n" << endl;
+
+				character.takeDamage(enemyDamage);
 			}
 			system("pause");
 		}
 		else
 		{
 			enemies[i].setIsDefending(true);
-		
+			character.setIsDefending(false);
 		}
 	}
 }

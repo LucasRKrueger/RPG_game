@@ -31,4 +31,5 @@ class Enemy
 		inline int getDefence()const {return this->defence;}
 		inline bool getIsDefending()const {return this->isDefending;}
 		inline void setIsDefending(bool isDefending) {this->isDefending = isDefending;}
+		inline void setAllEnemiesDefenceFalse(vector<Enemy> enemies) {}
 };
