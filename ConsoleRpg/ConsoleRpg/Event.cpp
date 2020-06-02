@@ -209,23 +209,31 @@ void Event::CharacterTurn(std::vector<Enemy>& enemies, Character& character)
 	{
 		if (enemies[enemy-1].getIsDefending())
 		{
-			bool damageIsGreaterThanZero = characterDamage - (enemies[enemy - 1].getDefence() / 2) > 0;
-			characterDamage -= enemies[enemy - 1].getDefence() / 2;
-			characterDamage = damageIsGreaterThanZero ? characterDamage : 0;
-
 			cout << "ENEMY IS DEFENDING\n" << endl;
-			cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
+
+			CharacterDamage(characterDamage, enemies, enemy);
 
 			enemies[enemy - 1].takeDamage(characterDamage);
+
+			cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
+
 			enemies[enemy - 1].setIsDefending(false);
 		}
 		else
 		{
-			cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
 			enemies[enemy - 1].takeDamage(characterDamage);
+
+			cout << "Enemy " << enemy << " taked " << characterDamage << " damage!\n" << endl;
 		}
 	}
 	system("pause");
+}
+
+void Event::CharacterDamage(int& characterDamage, std::vector<Enemy>& enemies, int enemy)
+{
+	bool damageIsGreaterThanZero = characterDamage - (enemies[enemy - 1].getDefence() / 2) > 0;
+	characterDamage -= enemies[enemy - 1].getDefence() / 2;
+	characterDamage = damageIsGreaterThanZero ? characterDamage : 0;
 }
 
 void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
@@ -245,10 +253,7 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 			{
 				cout << "YOU ARE DEFENDING\n" << endl;
 
-				bool damageIsGreaterThanZero = enemyDamage - (character.getDefence() / 2) > 0;
-
-				enemyDamage -= character.getDefence() / 2;
-				enemyDamage = damageIsGreaterThanZero ? enemyDamage : 0;
+				EnemyDamage(enemyDamage, character);
 
 				character.takeDamage(enemyDamage);
 
@@ -258,9 +263,9 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 			}
 			else
 			{
-				cout << "You taked " << enemyDamage << " Damage!\n" << endl;
-
 				character.takeDamage(enemyDamage);
+
+				cout << "You taked " << enemyDamage << " Damage!\n" << endl;
 			}
 			system("pause");
 		}
@@ -270,6 +275,14 @@ void Event::EnemyTurn(std::vector<Enemy>& enemies, Character& character)
 			character.setIsDefending(false);
 		}
 	}
+}
+
+void Event::EnemyDamage(int& enemyDamage, Character& character)
+{
+	bool damageIsGreaterThanZero = enemyDamage - (character.getDefence() / 2) > 0;
+
+	enemyDamage -= character.getDefence() / 2;
+	enemyDamage = damageIsGreaterThanZero ? enemyDamage : 0;
 }
 
 void Event::ShowAttributes(vector<Enemy>& enemies, Character& character)

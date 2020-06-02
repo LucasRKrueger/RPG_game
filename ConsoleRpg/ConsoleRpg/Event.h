@@ -13,7 +13,9 @@ public:
     void GetEnemies(int characterLevel, std::vector<Enemy>& enemies);
 	void StartFight(vector<Enemy>& enemies, Character& character);
 	void CharacterTurn(vector<Enemy>& enemies, Character& character);
+	void CharacterDamage(int& characterDamage, std::vector<Enemy>& enemies, int enemy);
 	void EnemyTurn(std::vector<Enemy>& enemies, Character& character);
+	void EnemyDamage(int& enemyDamage, Character& character);
 	void ShowAttributes(vector<Enemy>& enemies, Character& character);
 	void puzzleEncouter(Character& character);
 	void Fighting(Character& character, Enemy& enemy);
