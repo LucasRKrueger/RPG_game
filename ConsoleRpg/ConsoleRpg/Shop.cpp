@@ -16,14 +16,17 @@ Shop::~Shop()
 	delete[] itemArr;
 }
 
-vector<Item> Shop::getItems(int characterLevel)
+void Shop::getItems(int characterLevel)
 {
 	getRandomItemLevel(characterLevel);	
-	vector<Item> items;
-	vector<string>names = setItemNames();
+	vector<string> armorNames = getArmorNames();
+	vector<string> weaponNames = getWeaponNames();
 	for (size_t i = 0; i < 4; i++)
 	{
-		items[i] = new Item(names[i], 1, 1, 1, 1);
+		//add random defence
+		//add buy value/sell value
+		addItem(Weapon(2, 4, armorNames[i], getRandomItemLevel(characterLevel), 3, 1, 1));
+		addItem(Armor(2, 4, weaponNames[i], getRandomItemLevel(characterLevel), 3, 1, 1));
 	}
 }
 

@@ -8,7 +8,7 @@ using namespace std;
 class Item
 {
 	public:
-		Item(string name = "NONE", int level = 0, int buyvalue = 0, int sellValue = 0, int rarity = 0);
+		Item(string name, int level, int buyvalue , int sellValue, int rarity);
 
 		~Item();
 
