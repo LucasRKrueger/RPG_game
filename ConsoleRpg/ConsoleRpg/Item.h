@@ -10,7 +10,7 @@ class Item
 	public:
 		Item(string name = "NONE", int level = 0, int buyvalue = 0, int sellValue = 0, int rarity = 0);
 
-		virtual ~Item();
+		~Item();
 
 		inline string debugPrint() const {return this->name;}
 		virtual Item* clone() const = 0;
