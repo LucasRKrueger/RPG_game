@@ -9,6 +9,7 @@ public:
 	virtual ~Shop();
 	void getItems(int characterLevel);
 	inline int getRandomItemLevel(int charLevel)const {return rand() % (charLevel+2) - charLevel;}
+	inline int getRandomDefence(int charLevel)const {return rand()%(charLevel+8)-charLevel;}
 	inline vector<string> getArmorNames() {return { "Leather Greaves","Leather Helmet", "Leather Breastplate", "Leather Sabatons"  };}
 	inline vector<string> getWeaponNames() {return { "Stick","Wooden Shield","Wooden Sword", "Stone Sword"};}
 

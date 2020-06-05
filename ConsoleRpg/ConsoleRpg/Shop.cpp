@@ -17,16 +17,16 @@ Shop::~Shop()
 }
 
 void Shop::getItems(int characterLevel)
-{
-	getRandomItemLevel(characterLevel);	
+{	
 	vector<string> armorNames = getArmorNames();
 	vector<string> weaponNames = getWeaponNames();
+	int buyValue = characterLevel * 10;
+	int sellValue = buyValue / 2;
+
 	for (size_t i = 0; i < 4; i++)
 	{
-		//add random defence
-		//add buy value/sell value
-		addItem(Weapon(2, 4, armorNames[i], getRandomItemLevel(characterLevel), 3, 1, 1));
-		addItem(Armor(2, 4, weaponNames[i], getRandomItemLevel(characterLevel), 3, 1, 1));
+		addItem(Weapon(1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
+		addItem(Armor(1, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 	}
 }
 
