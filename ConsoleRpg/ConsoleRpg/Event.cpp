@@ -157,7 +157,7 @@ void Event::GetEnemies(int characterLevel, std::vector<Enemy>& enemies)
 	int position = 0;
 
 	if (characterLevel == 1) {
-		Enemy enemy(rand() % characterLevel + 2);
+		Enemy enemy(rand() % characterLevel + 1);
 		enemies.push_back(position);
 		enemies[position] = enemy;
 		position++;

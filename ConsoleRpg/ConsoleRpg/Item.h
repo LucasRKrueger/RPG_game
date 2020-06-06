@@ -12,7 +12,7 @@ class Item
 
 		~Item();
 
-		inline string debugPrint() const {return this->name;}
+		inline string debugPrint() const {return "Name " + this->name + "Price " + to_string(this->buyValue);}
 		virtual Item* clone() const = 0;
 
 		inline const string& getName() const {return this->name;}

@@ -1,7 +1,2 @@
-﻿  Shop.cpp
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.h(21,24): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(12,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(40,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(58,26): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(70,23): warning C4018: '<': incompatibilidade de signed/unsigned
+﻿  Armor.cpp
   ConsoleRpg.vcxproj -> C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\Debug\ConsoleRpg.exe
