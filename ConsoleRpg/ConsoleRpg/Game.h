@@ -7,6 +7,7 @@
 #include <ctime>
 #include <vector>
 #include <sstream>
+#include "Shop.h"
 
 class Game
 {
@@ -21,6 +22,7 @@ class Game
 		void saveCharacters();
 		void loadCharacter();
 		void Travel();
+		void goToShop();
 
 		inline bool getPlaying() const {return this->playing;}
 	private:

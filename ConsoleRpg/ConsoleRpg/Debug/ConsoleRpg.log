@@ -1,29 +1,7 @@
-﻿  Armor.cpp
-  Character.cpp
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Character.cpp(132,89): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
-  Event.cpp
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': signed/unsigned mismatch
-  Game.cpp
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': signed/unsigned mismatch
-  Inventory.cpp
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(13,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(26,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(48,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(60,23): warning C4018: '<': signed/unsigned mismatch
-  Item.cpp
-  Main.cpp
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Main.cpp(5,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Shop.cpp
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Shop.h(20,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(12,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(39,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(57,26): warning C4018: '<': signed/unsigned mismatch
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(69,23): warning C4018: '<': signed/unsigned mismatch
-  Weapon.cpp
-  Generating Code...
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(38): warning C4172: returning address of local variable or temporary
-C:\Users\brc\Desktop\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(48): warning C4172: returning address of local variable or temporary
-  ConsoleRpg.vcxproj -> C:\Users\brc\Desktop\RPG_game\ConsoleRpg\Debug\ConsoleRpg.exe
+﻿  Shop.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.h(21,24): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(12,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(40,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(58,26): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(70,23): warning C4018: '<': incompatibilidade de signed/unsigned
+  ConsoleRpg.vcxproj -> C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\Debug\ConsoleRpg.exe

@@ -28,6 +28,7 @@ void Shop::getItems(int characterLevel)
 		addItem(Weapon(1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 		addItem(Armor(1, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 	}
+	debugPrint();
 }
 
 Shop::Shop(const Shop& obj)

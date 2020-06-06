@@ -11,7 +11,7 @@ public:
 	void generateEvent(Character& character);
 	void enemyEncouter(Character& character);
     void GetEnemies(int characterLevel, std::vector<Enemy>& enemies);
-	void StartFight(vector<Enemy>& enemies, Character& character);
+	void StartBattle(vector<Enemy>& enemies, Character& character);
 	void CharacterTurn(vector<Enemy>& enemies, Character& character);
 	void CharacterDamage(int& characterDamage, std::vector<Enemy>& enemies, int enemy);
 	void EnemyTurn(std::vector<Enemy>& enemies, Character& character);

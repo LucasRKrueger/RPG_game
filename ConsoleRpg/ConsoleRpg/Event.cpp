@@ -38,10 +38,10 @@ void Event::enemyEncouter(Character& character)
 
 	GetEnemies(characterLevel, enemies);
 
-	StartFight(enemies, character);
+	StartBattle(enemies, character);
 }
 
-void Event::StartFight(vector<Enemy>& enemies, Character& character)
+void Event::StartBattle(vector<Enemy>& enemies, Character& character)
 {
 	bool isFighting = true;
 	cout << "THE BATTLE IS ABOUT TO BEGIN\n";
@@ -74,7 +74,6 @@ void Event::StartFight(vector<Enemy>& enemies, Character& character)
 
 		if (!isFighting)
 		{
-
 			if (enemies.size() > 1)
 			{
 				cout << "YOU DEFEATED ALL THE ENEMIES!";
