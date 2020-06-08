@@ -1,9 +1,10 @@
 #include "Weapon.h"
 Weapon::Weapon(int damageMin, int damageMax, string name,
-int level, int buyvalue , int sellValue , int rarity) : Item (name,level,buyvalue,sellValue,rarity)
+int level, int buyValue , int sellValue , int rarity) : Item (name,level,buyValue,sellValue,rarity)
 {
 	this->damageMin = damageMin;
 	this->damageMax = damageMax;
+	this->buyValue = buyValue;
 }
 
 Weapon::~Weapon()

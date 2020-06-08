@@ -8,11 +8,11 @@ using namespace std;
 class Item
 {
 	public:
-		Item(string name, int level, int buyvalue , int sellValue, int rarity);
+		Item(string name, int level, int buyValue , int sellValue, int rarity);
 
 		~Item();
 
-		inline string debugPrint() const {return "Name " + this->name + "Price " + to_string(this->buyValue);}
+		inline string debugPrint(int index) const {return to_string(index+1) + "- Name: " + this->name + "\nPrice: " + to_string(this->buyValue) +"\n";}
 		virtual Item* clone() const = 0;
 
 		inline const string& getName() const {return this->name;}

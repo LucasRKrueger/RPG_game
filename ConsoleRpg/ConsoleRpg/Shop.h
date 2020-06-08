@@ -8,6 +8,7 @@ public:
 	Shop();
 	virtual ~Shop();
 	void getItems(int characterLevel);
+
 	inline int getRandomItemLevel(int charLevel)const {return rand() % (charLevel+2) - charLevel;}
 	inline int getRandomDefence(int charLevel)const {return rand()%(charLevel+8)-charLevel;}
 	inline vector<string> getArmorNames() {return { "Leather Greaves","Leather Helmet", "Leather Breastplate", "Leather Sabatons"  };}
@@ -20,7 +21,7 @@ public:
 	{
 		for (size_t i = 0; i < this->numberOfItems; i++)
 		{
-			cout << this->itemArr[i]->debugPrint() << endl;
+			cout << this->itemArr[i]->debugPrint(i) << endl;
 		}
 	}
 private:
