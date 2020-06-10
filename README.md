@@ -13,6 +13,8 @@ It's a RPG game that I'm developing because I want to improve my c++ knowledge b
 * Shop
 * Buy items
 * Sell Items
-* Spells
+* Spells(extra)
+* Potions
+* One Free Heal per battle
 
 # Not playable yet
