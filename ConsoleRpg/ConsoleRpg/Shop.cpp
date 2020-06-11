@@ -16,7 +16,7 @@ Shop::~Shop()
 	delete[] itemArr;
 }
 
-void Shop::getItems(int characterLevel)
+void Shop::getItems(int characterLevel)//character obj as parameter
 {	
 	vector<string> armorNames = getArmorNames();
 	vector<string> weaponNames = getWeaponNames();
@@ -29,6 +29,17 @@ void Shop::getItems(int characterLevel)
 		addItem(Armor(1, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 	}
 	debugPrint();
+	
+	int item;
+
+	cout << "Choose an item that you want to buy: ";
+	cin >> item;
+
+	//create a validation if character has money to pay
+
+	//method to push the item into character inventory
+
+	system("pause");
 }
 
 Shop::Shop(const Shop& obj)
