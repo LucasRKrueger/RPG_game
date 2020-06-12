@@ -2,12 +2,13 @@
 #include "vector"
 #include "Weapon.h"
 #include "Armor.h"
+#include "Character.h"
 
 class Shop{
 public:
 	Shop();
 	virtual ~Shop();
-	void getItems(int characterLevel);
+	void getItems(Character character);
 
 	inline int getRandomItemLevel(int charLevel)const {return rand() % (charLevel+2) - charLevel;}
 	inline int getRandomDefence(int charLevel)const {return rand()%(charLevel+8)-charLevel;}

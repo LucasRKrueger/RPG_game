@@ -22,7 +22,7 @@ class Game
 		void saveCharacters();
 		void loadCharacter();
 		void Travel();
-		void goToShop();
+		void goToShop(Character character);
 
 		inline bool getPlaying() const {return this->playing;}
 	private:

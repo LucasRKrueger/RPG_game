@@ -1,4 +1,5 @@
 #include "Shop.h"
+#include "Inventory.h"
 Shop::Shop()
 {	
 	this->capacity = 5;
@@ -16,10 +17,13 @@ Shop::~Shop()
 	delete[] itemArr;
 }
 
-void Shop::getItems(int characterLevel)//character obj as parameter
+void Shop::getItems(Character character)
 {	
+	int characterLevel = character.getLevel();
+
 	vector<string> armorNames = getArmorNames();
 	vector<string> weaponNames = getWeaponNames();
+
 	int buyValue = characterLevel * 10;
 	int sellValue = buyValue / 2;
 
@@ -28,18 +32,22 @@ void Shop::getItems(int characterLevel)//character obj as parameter
 		addItem(Weapon(1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 		addItem(Armor(1, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 	}
+
 	debugPrint();
-	
-	int item;
+	int itemIndex;
 
 	cout << "Choose an item that you want to buy: ";
-	cin >> item;
+	cin >> itemIndex;
 
-	//create a validation if character has money to pay
+	Item* itemObj = itemArr[itemIndex - 1];
+	
+	if (character.hasGoldToBuy(itemObj->getBuyValue()))
+	{
+		Inventory inventory;
 
-	//method to push the item into character inventory
-
-	system("pause");
+		//inventory.addItem(itemObj);
+	}
+	
 }
 
 Shop::Shop(const Shop& obj)

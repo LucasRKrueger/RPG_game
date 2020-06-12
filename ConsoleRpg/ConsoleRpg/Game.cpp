@@ -56,7 +56,7 @@ void Game::mainMenu()
 			Travel();
 			break;
 		case 2:
-			goToShop();
+			goToShop(characters[activeCharacter]);
 			break;
 		case 3:
 			this->characters[activeCharacter].levelUp();
@@ -191,8 +191,8 @@ void Game::Travel()
 	event.generateEvent(this->characters[activeCharacter]);
 }
 
-void Game::goToShop()
+void Game::goToShop(Character character)
 {
 	Shop shop;
-	shop.getItems(this->characters[activeCharacter].getLevel());
+	shop.getItems(character);
 }
