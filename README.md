@@ -9,10 +9,9 @@ It's a RPG game that I'm developing because I want to improve my c++ knowledge b
 * Battle
 
 # TO DO
-* Puzzles
-* Shop
-* Buy items
-* Sell Items
+* Puzzles(travel)
+* Buy items(shop)
+* Sell Items(shop)
 * Spells(extra)
 * Potions
 * One Free Heal per battle
