@@ -29,8 +29,8 @@ void Shop::getItems(Character character)
 
 	for (size_t i = 0; i < 4; i++)
 	{
-		addItem(Weapon(1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
-		addItem(Armor(1, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
+		addItem(Weapon(1, 1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
+		addItem(Armor(2, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 	}
 
 	debugPrint();
@@ -42,10 +42,23 @@ void Shop::getItems(Character character)
 	Item* itemObj = itemArr[itemIndex - 1];
 	
 	if (character.hasGoldToBuy(itemObj->getBuyValue()))
-	{
+	{	
 		Inventory inventory;
+		string name = itemObj->getName();
+		int type = itemObj->getRarity();
+		int level = itemObj->getLevel();
+		int buyValue = itemObj->getBuyValue();
+		int sellValue = itemObj->getSellValue();
+		int rarity = itemObj->getRarity();
 
-		//inventory.addItem(itemObj);
+		if (type == 1)
+		{
+			//inventory.addItem(Weapon(type, ));
+		}
+		else
+		{
+			//inventory.addItem(Armor(type, 0, ))
+		}
 	}
 	
 }

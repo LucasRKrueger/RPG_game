@@ -10,7 +10,7 @@ class Armor : public Item
 		virtual ~Armor();
 
 		string toString();
-
+		inline int const getType() {return type;}
 		virtual Armor* clone() const;
 
 	private:
