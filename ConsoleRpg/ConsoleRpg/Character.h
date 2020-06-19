@@ -12,7 +12,7 @@ class Character
 		virtual ~Character();
 		
 		void initialize(const string name);
-		void printStatus() const;
+		void printStatus(Inventory inventory) const;
 		int necessaryXP(int level);
 		void levelUp();
 		string getAsString()const;

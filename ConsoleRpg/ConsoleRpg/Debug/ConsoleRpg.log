@@ -1,9 +1,41 @@
-﻿  Shop.cpp
+﻿  Armor.cpp
+  Character.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(37,49): warning C4804: '<=': uso não seguro de tipo 'bool' em operação
+  Enemy.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.cpp(134,89): warning C4244: 'return': conversão de 'double' para 'int', possível perda de dados
+  Event.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Enemy.cpp(10,28): warning C4244: '=': conversão de 'int' para 'float', possível perda de dados
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+  Game.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(37,49): warning C4804: '<=': uso não seguro de tipo 'bool' em operação
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(37,49): warning C4804: '<=': uso não seguro de tipo 'bool' em operação
+  Inventory.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.h(23,24): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(13,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(26,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(48,26): warning C4018: '<': incompatibilidade de signed/unsigned
+  Item.cpp
+  Main.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.cpp(60,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(37,49): warning C4804: '<=': uso não seguro de tipo 'bool' em operação
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.h(23,24): warning C4018: '<': incompatibilidade de signed/unsigned
+  Puzzle.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Main.cpp(5,12): warning C4244: 'argumento': conversão de 'time_t' para 'unsigned int', possível perda de dados
+  Shop.cpp
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Puzzle.cpp(18,24): warning C4018: '<': incompatibilidade de signed/unsigned
 C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Inventory.h(18,25): warning C4018: '<': incompatibilidade de signed/unsigned
 C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(37,49): warning C4804: '<=': uso não seguro de tipo 'bool' em operação
 C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.h(23,24): warning C4018: '<': incompatibilidade de signed/unsigned
 C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(13,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(64,23): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(82,26): warning C4018: '<': incompatibilidade de signed/unsigned
-C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(94,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(80,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(98,26): warning C4018: '<': incompatibilidade de signed/unsigned
+  Weapon.cpp
+  Gerando Código...
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Shop.cpp(110,23): warning C4018: '<': incompatibilidade de signed/unsigned
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(40): warning C4172: retornando o endereço da variável local ou temporário
+C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\ConsoleRpg\Character.h(50): warning C4172: retornando o endereço da variável local ou temporário
   ConsoleRpg.vcxproj -> C:\Users\lucas\OneDrive\Área de Trabalho\RPG_game\ConsoleRpg\Debug\ConsoleRpg.exe

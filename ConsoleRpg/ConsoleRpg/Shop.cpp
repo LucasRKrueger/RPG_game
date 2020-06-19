@@ -17,7 +17,7 @@ Shop::~Shop()
 	delete[] itemArr;
 }
 
-void Shop::getItems(Character character)
+void Shop::getItems(Character character, Inventory& _inventory)
 {	
 	int characterLevel = character.getLevel();
 
@@ -29,7 +29,7 @@ void Shop::getItems(Character character)
 
 	for (size_t i = 0; i < 4; i++)
 	{
-		addItem(Weapon(1, 1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
+		addItem(Weapon(1, getRandomDefence(characterLevel), armorNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 		addItem(Armor(2, getRandomDefence(characterLevel), weaponNames[i], getRandomItemLevel(characterLevel), buyValue, sellValue, 1));
 	}
 
@@ -43,24 +43,32 @@ void Shop::getItems(Character character)
 	
 	if (character.hasGoldToBuy(itemObj->getBuyValue()))
 	{	
-		Inventory inventory;
 		string name = itemObj->getName();
-		int type = itemObj->getRarity();
 		int level = itemObj->getLevel();
 		int buyValue = itemObj->getBuyValue();
 		int sellValue = itemObj->getSellValue();
 		int rarity = itemObj->getRarity();
 
-		if (type == 1)
+		if (name.find("ARMOR"))
 		{
-			//inventory.addItem(Weapon(type, ));
+			int defence = level * 3;
+
+			int type = level < 50 ? 1 : 2;
+
+			_inventory.addItem(Armor(type, defence, name, level, buyValue, sellValue, rarity));
 		}
 		else
 		{
-			//inventory.addItem(Armor(type, 0, ))
+			int damageMin = level * 2;
+
+			int damageMax = level * 4;
+
+			_inventory.addItem(Weapon(damageMin, damageMax,name,level,buyValue, sellValue, rarity));
 		}
-	}
-	
+		system("cls");
+		cout << "You now have " << name << "!!" << endl;
+		system("pause");
+	}	
 }
 
 Shop::Shop(const Shop& obj)

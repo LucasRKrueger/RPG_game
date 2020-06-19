@@ -17,10 +17,10 @@ void Game::initGame()
 }
 
 //Functions
-void Game::mainMenu()
+void Game::mainMenu(Inventory& inventory)
 {
 	int activeCharacter = character.getActiveCharacter(characters);
-
+	
 	if (characters[activeCharacter].getHp() > 0)
 	{
 		cout << "CHARACTER NAME: " << characters[activeCharacter].getName() << endl << endl;
@@ -56,13 +56,14 @@ void Game::mainMenu()
 			Travel();
 			break;
 		case 2:
-			goToShop(characters[activeCharacter]);
+			goToShop(characters[activeCharacter], inventory);
 			break;
 		case 3:
 			this->characters[activeCharacter].levelUp();
 			break;
 		case 4:
-			characters[activeCharacter].printStatus();
+
+			characters[activeCharacter].printStatus(inventory);
 			break;
 		case 5:
 			cin.ignore();
@@ -191,8 +192,8 @@ void Game::Travel()
 	event.generateEvent(this->characters[activeCharacter]);
 }
 
-void Game::goToShop(Character character)
+void Game::goToShop(Character character, Inventory& inventory)
 {
 	Shop shop;
-	shop.getItems(character);
+	shop.getItems(character, inventory);
 }

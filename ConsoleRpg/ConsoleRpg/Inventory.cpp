@@ -69,8 +69,6 @@ void Inventory::expand()
 	this->initialize(this->numberOfItems);
 }
 
-
-
 Item& Inventory::operator[](const int index)
 {
 	if (index < 0 || index >= this->numberOfItems)

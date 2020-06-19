@@ -1,8 +1,8 @@
 #include "Weapon.h"
-Weapon::Weapon(int type,int damageMin, int damageMax, string name,
+Weapon::Weapon(int damageMin, int damageMax, string name,
 int level, int buyValue , int sellValue , int rarity) : Item (name,level,buyValue,sellValue,rarity)
 {
-	this->type = type;
+	//this->type = type;
 	this->damageMin = damageMin;
 	this->damageMax = damageMax;
 	this->buyValue = buyValue;

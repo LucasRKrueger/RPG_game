@@ -8,12 +8,12 @@ class Shop{
 public:
 	Shop();
 	virtual ~Shop();
-	void getItems(Character character);
+	void getItems(Character character, Inventory& inventory);
 
 	inline int getRandomItemLevel(int charLevel)const {return rand() % (charLevel+2) - charLevel;}
 	inline int getRandomDefence(int charLevel)const {return rand()%(charLevel+8)-charLevel;}
-	inline vector<string> getArmorNames() {return { "Leather Greaves","Leather Helmet", "Leather Breastplate", "Leather Sabatons"  };}
-	inline vector<string> getWeaponNames() {return { "Stick","Wooden Shield","Wooden Sword", "Stone Sword"};}
+	inline vector<string> getArmorNames() {return { "*ARMOR* Leather Greaves","*ARMOR* Leather Helmet", "*ARMOR* Leather Breastplate", "*ARMOR* Leather Sabatons"  };}
+	inline vector<string> getWeaponNames() {return { "*WEAPON* Stick","*WEAPON* Wooden Shield","*WEAPON* Wooden Sword", "*WEAPON* Stone Sword"};}
 
 	Item& operator[](const int index);
 	Shop(const Shop& obj);

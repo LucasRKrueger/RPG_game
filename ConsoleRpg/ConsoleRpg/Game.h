@@ -15,14 +15,14 @@ class Game
 		Game();
 		virtual ~Game();	
 		void initGame();
-		void mainMenu();
+		void mainMenu(Inventory& inventory);
 		void levelUpAvaliable(int activeCharacter);
 		void createNewCharacter();
 		void reCreateCharacter(string name);
 		void saveCharacters();
 		void loadCharacter();
 		void Travel();
-		void goToShop(Character character);
+		void goToShop(Character character, Inventory& inventory);
 
 		inline bool getPlaying() const {return this->playing;}
 	private:

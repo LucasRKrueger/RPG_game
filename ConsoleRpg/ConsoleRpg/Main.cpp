@@ -5,11 +5,12 @@ int main()
 	srand(time(NULL));
 
 	Game game;
+	Inventory inventory;
 	game.initGame();
 
 	while (game.getPlaying())
 	{
-		game.mainMenu();
+		game.mainMenu(inventory);
 	}
 	return 0;
 }

@@ -102,7 +102,7 @@ void Character::initialize(string name)
 	this->statPoints = 0;
 }
 
-void Character::printStatus() const
+void Character::printStatus(Inventory inventory) const
 {
 	cout << "| ## Character Sheet ##" << endl;
 	cout << "|================================" << endl;
@@ -124,6 +124,8 @@ void Character::printStatus() const
 	cout << "| Luck: " << this->luck << endl;
 
 	cout << "================================" << endl;
+	cout << "           INVENTORY            " << endl;
+	inventory.debugPrint();
 	cout << endl;
 }
 
